@@ -1,0 +1,110 @@
+{
+  "timezone": "Asia/Tbilisi",
+  "schedule_utc": "0 6 * * *",
+  "countries": [
+    "Georgia"
+  ],
+  "languages": [
+    "RU",
+    "EN",
+    "GE"
+  ],
+  "excluded_employers": [
+    "5CA"
+  ],
+  "excluded_platforms": [
+    "PlaytestCloud",
+    "UserTesting",
+    "DataAnnotation.tech",
+    "Prolific",
+    "NoGigiddy (Account Manager)",
+    "OpenTrain AI (EN копирайтинг)"
+  ],
+  "categories": {
+    "Customer Support": [
+      "customer support",
+      "customer service",
+      "chat support",
+      "player support",
+      "technical support",
+      "customer success",
+      "support associate"
+    ],
+    "QA": [
+      "game tester",
+      "game qa",
+      "manual qa",
+      "crowdtesting",
+      "software tester"
+    ],
+    "AI": [
+      "ai trainer",
+      "response evaluator",
+      "content evaluator",
+      "data annotator",
+      "data labeling",
+      "search quality",
+      "ads quality",
+      "language contributor",
+      "data collection",
+      "ai trainers",
+      "talent hub"
+    ],
+    "Другие направления": [
+      "content moderator",
+      "community moderator",
+      "data entry",
+      "virtual assistant",
+      "transcription",
+      "localization reviewer"
+    ]
+  },
+  "formats": [
+    "Remote",
+    "Hybrid",
+    "Office"
+  ],
+  "employment": [
+    "Full-time",
+    "Part-time",
+    "Freelance",
+    "Contract",
+    "Task-based"
+  ],
+  "geographic_terms": [
+    "Georgia",
+    "Tbilisi",
+    "Batumi",
+    "Kutaisi",
+    "Rustavi",
+    "Gori"
+  ],
+  "include_worldwide_leads": false,
+  "excluded_title_languages": [
+    "German",
+    "French",
+    "Dutch",
+    "Polish",
+    "Japanese",
+    "Korean",
+    "Portuguese",
+    "Spanish",
+    "Italian",
+    "Arabic",
+    "Hebrew",
+    "Turkish"
+  ],
+  "exclude_senior_titles": true,
+  "disabled_categories": [],
+  "priority_rules": {
+    "russian_remote": "A",
+    "default": "B",
+    "georgian_required": "B"
+  },
+  "closure_min_hours": 12,
+  "verification_ttl_hours": 48,
+  "stale_run_hours": 36,
+  "source_aliases": {
+    "wolt:7925981": "job-c32803957a39"
+  }
+}

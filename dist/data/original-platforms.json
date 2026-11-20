@@ -1,0 +1,899 @@
+{
+  "Лист1": [
+    {
+      "row": 1,
+      "cells": [
+        {
+          "column": "A",
+          "value": "🌐 Каталог удалённых площадок с выводом денег в Грузию",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 2,
+      "cells": [
+        {
+          "column": "A",
+          "value": "Проверенные платформы для part-time удалённой работы (AI-тренинг, краудтестинг, сбор/разметка данных, саппорт) и чёрный список сервисов",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 3,
+      "cells": [
+        {
+          "column": "A",
+          "value": "Проверенных площадок",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Одобрен KYC / Аккаунт",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Тесты сданы",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "В чёрном списке",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 4,
+      "cells": [
+        {
+          "column": "A",
+          "value": 13,
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": 0,
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": 0,
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": 6,
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 6,
+      "cells": [
+        {
+          "column": "A",
+          "value": "Площадка",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "Ссылка",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "Категория",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Что делать",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Порог входа",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Вывод в Грузию",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Статус регистрации / KYC",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Тесты / Квалификация",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Заметки",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 7,
+      "cells": [
+        {
+          "column": "A",
+          "value": "uTest",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "utest.com",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "Нестандартное / Crowdtesting",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Поиск багов в приложениях, сайтах и играх",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Низкий (uTest Academy)",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Payoneer (от $2)",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Не пройдено",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "$10–$30 за сценарий или $5–$50+ за баг",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 8,
+      "cells": [
+        {
+          "column": "A",
+          "value": "DataForce (TransPerfect)",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "dataforcecommunity.transperfect.com",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "Нестандартное / Сбор данных",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Запись голоса, фото/видео для ИИ, UX-тесты с телефона",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Минимальный",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Банковский счёт, Payoneer",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Не требуется",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "$25–$100+ за завершённый сет",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 9,
+      "cells": [
+        {
+          "column": "A",
+          "value": "ModSquad",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "join.modsquad.com",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "Нестандартное / Модерация",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Модерация Discord, чатов, форумов игр и брендов",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Средний (грамотное письмо, игровая культура)",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "По контракту (уточнять)",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Не пройдено",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Опыт работы с людьми в баре — сильный плюс",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 10,
+      "cells": [
+        {
+          "column": "A",
+          "value": "TELUS Digital AI",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "telusinternational.ai/opportunities",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "AI / Поиск",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Оценка выдачи поиска, рекламы и контента (Personalized Internet Assessor)",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Средний (входной тест)",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Hyperwallet → местный банк",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Не пройдено",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Есть наборы под Грузию (RU/EN), свободный график",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 11,
+      "cells": [
+        {
+          "column": "A",
+          "value": "Welo Data (Welocalize)",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "aitrainers.tech",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "AI / Локализация",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Оценка ответов ИИ, промпты, локализация (GE/RU + EN)",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Низкий/Средний",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Hyperwallet → местный банк",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Не пройдено",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Грузия в списке одобренных стран, регистрация 5 мин",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 12,
+      "cells": [
+        {
+          "column": "A",
+          "value": "RWS TrainAI",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "rws.com/trainai",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "AI / Разметка",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Разметка текста и аудио, оценка поиска и рекламы по гайдлайнам",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Низкий (берут без опыта)",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Прямой перевод на банк",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Не пройдено",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Гибкий part-time, прозрачные правила",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 13,
+      "cells": [
+        {
+          "column": "A",
+          "value": "Mindrift (Toloka)",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "mindrift.ai/apply",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "AI / Тренинг ИИ",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Оценка ответов ИИ, фактчекинг (русский/английский)",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Средний (часто 1 попытка на тест)",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Payoneer, банк (Tipalti)",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Не пройдено",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Читать гайдлайны внимательно, раскачка 2–6 недель",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 14,
+      "cells": [
+        {
+          "column": "A",
+          "value": "OneForma (Centific)",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "oneforma.com/projects",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "AI / Локализация",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Разметка, проверка переводов, транскрибация (GE/RU + EN)",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Низкий/Средний",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Payoneer, Tipalti",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Не пройдено",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Указать все языки в профиле для выдачи проектов",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 15,
+      "cells": [
+        {
+          "column": "A",
+          "value": "CrowdGen (Appen Experts)",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "experts.appen.com",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "AI / Поиск",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Разметка текста/видео, оценка поиска, языковые проекты",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Низкий",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Payoneer, SWIFT, AirTM",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Не пройдено",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Подаваться сразу на 3–5 проектов",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 16,
+      "cells": [
+        {
+          "column": "A",
+          "value": "Outlier (Scale AI)",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "outlier.ai",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "AI / Тренинг ИИ",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Оценка промптов и ответов ИИ",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Средний",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "AirTM, банк",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Не пройдено",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Высокие ставки, но бывают простои (EQ) и строгий контроль VPN/KYC",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 17,
+      "cells": [
+        {
+          "column": "A",
+          "value": "SupportYourApp",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "supportyourapp.com/career",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "Саппорт (стабильный)",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Удалённая поддержка клиентов (наём в Тбилиси / Грузии)",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Выше среднего (B2–C1)",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Оплата в USD по контракту",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "Не пройдено",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Бывают гибкие проекты; упаковать опыт в баре в резюме",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 18,
+      "cells": [
+        {
+          "column": "A",
+          "value": "Diaspire",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "jobs.diaspire.app",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "Доска вакансий (мониторинг)",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Чат-поддержка, админ, AI-роли с проверкой стран",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Зависит от вакансии",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Уточнять до тестового",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "—",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Проверять 2 раза в неделю, есть отдельный раздел AI data work",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 19,
+      "cells": [
+        {
+          "column": "A",
+          "value": "Stafka",
+          "hyperlink": null
+        },
+        {
+          "column": "B",
+          "value": "stafka.com/ge",
+          "hyperlink": null
+        },
+        {
+          "column": "C",
+          "value": "Доска вакансий (мониторинг)",
+          "hyperlink": null
+        },
+        {
+          "column": "D",
+          "value": "Удалённый саппорт, ассистенты и вакансии под Грузию",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Зависит от вакансии",
+          "hyperlink": null
+        },
+        {
+          "column": "F",
+          "value": "Уточнять до тестового",
+          "hyperlink": null
+        },
+        {
+          "column": "G",
+          "value": "Не начато",
+          "hyperlink": null
+        },
+        {
+          "column": "H",
+          "value": "—",
+          "hyperlink": null
+        },
+        {
+          "column": "I",
+          "value": "Отфильтровано под Грузию, можно оставить резюме в базе",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 21,
+      "cells": [
+        {
+          "column": "A",
+          "value": "⛔ Кого пропустить (чёрный список)",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 22,
+      "cells": [
+        {
+          "column": "A",
+          "value": "Сервисы с неработающим в Грузии выводом (строго PayPal / Stripe) или нецелесообразными условиями",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 24,
+      "cells": [
+        {
+          "column": "A",
+          "value": "Площадка / Вакансия",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Причина пропуска",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 25,
+      "cells": [
+        {
+          "column": "A",
+          "value": "PlaytestCloud",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Выплаты строго на PayPal (не работает на приём в Грузии)",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 26,
+      "cells": [
+        {
+          "column": "A",
+          "value": "UserTesting",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Выплаты строго на PayPal",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 27,
+      "cells": [
+        {
+          "column": "A",
+          "value": "DataAnnotation.tech",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Выплаты строго на PayPal, Грузии нет в приоритетных странах",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 28,
+      "cells": [
+        {
+          "column": "A",
+          "value": "Prolific",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Выплаты только через PayPal, жёсткие гео-ограничения (США/ЕС/ОЭСР)",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 29,
+      "cells": [
+        {
+          "column": "A",
+          "value": "NoGigiddy (Account Manager)",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Высокий риск спам-агрегатора и нереалистичная ставка для entry-level",
+          "hyperlink": null
+        }
+      ]
+    },
+    {
+      "row": 30,
+      "cells": [
+        {
+          "column": "A",
+          "value": "OpenTrain AI (EN копирайтинг)",
+          "hyperlink": null
+        },
+        {
+          "column": "E",
+          "value": "Огромная конкуренция с носителями C2 и привязка к Stripe (не работает в Грузии)",
+          "hyperlink": null
+        }
+      ]
+    }
+  ]
+}

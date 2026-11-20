@@ -1,0 +1,28 @@
+{
+  "last_database_update": "2026-11-20T23:44:11+00:00",
+  "last_run_at": "2026-11-20T23:43:41+00:00",
+  "automation_enabled": false,
+  "source_manual_updated_on": "2026-11-21",
+  "imported_jobs": 19,
+  "imported_platforms": 13,
+  "last_run_outcome": "success",
+  "source_results": [
+    {
+      "source_id": "wolt",
+      "status": "ok",
+      "returned": 9
+    },
+    {
+      "source_id": "welo",
+      "status": "ok",
+      "returned": 462
+    }
+  ],
+  "new_jobs": 0,
+  "checked_jobs": 19,
+  "verified_jobs": 3,
+  "total_jobs": 19,
+  "coverage_note": "Автоматически: Wolt и Welo Data. Остальные источники требуют ручной проверки.",
+  "schedule_configured": true,
+  "scheduled_run_confirmed": false
+}

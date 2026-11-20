@@ -1,0 +1,21 @@
+[
+  {
+    "id": "wolt",
+    "company": "Wolt",
+    "adapter": "wolt",
+    "url": "https://careers.wolt.com/en/jobs?location=Georgia",
+    "enabled": true,
+    "scope": "Официальный список и JobPosting; только доступные на странице позиции",
+    "documentation": "https://careers.wolt.com/robots.txt"
+  },
+  {
+    "id": "welo",
+    "company": "Welo Data",
+    "adapter": "lever",
+    "url": "https://api.lever.co/v0/postings/weloglobal?mode=json",
+    "enabled": true,
+    "platform_id": "platform-1a0422d1dd",
+    "scope": "Публичный API; talent pools отдельно от оплачиваемых работ",
+    "documentation": "https://github.com/lever/postings-api"
+  }
+]

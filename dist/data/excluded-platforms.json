@@ -1,0 +1,38 @@
+[
+  {
+    "name": "PlaytestCloud",
+    "reason": "Выплаты строго на PayPal (не работает на приём в Грузии)",
+    "reason_status": "Исходная причина; требует повторной оценки",
+    "auto_reinclude": false
+  },
+  {
+    "name": "UserTesting",
+    "reason": "Выплаты строго на PayPal",
+    "reason_status": "Исходная причина; требует повторной оценки",
+    "auto_reinclude": false
+  },
+  {
+    "name": "DataAnnotation.tech",
+    "reason": "Выплаты строго на PayPal, Грузии нет в приоритетных странах",
+    "reason_status": "Исходная причина; требует повторной оценки",
+    "auto_reinclude": false
+  },
+  {
+    "name": "Prolific",
+    "reason": "Выплаты только через PayPal, жёсткие гео-ограничения (США/ЕС/ОЭСР)",
+    "reason_status": "Исходная причина; требует повторной оценки",
+    "auto_reinclude": false
+  },
+  {
+    "name": "NoGigiddy (Account Manager)",
+    "reason": "Высокий риск спам-агрегатора и нереалистичная ставка для entry-level",
+    "reason_status": "Исходная причина; требует повторной оценки",
+    "auto_reinclude": false
+  },
+  {
+    "name": "OpenTrain AI (EN копирайтинг)",
+    "reason": "Огромная конкуренция с носителями C2 и привязка к Stripe (не работает в Грузии)",
+    "reason_status": "Исходная причина; требует повторной оценки",
+    "auto_reinclude": false
+  }
+]
