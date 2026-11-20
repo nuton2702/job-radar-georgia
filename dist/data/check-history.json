@@ -145,5 +145,152 @@
     "outcome": "unavailable",
     "evidence": "No supported successful verification for this record; not evidence of closure",
     "url": "https://jobs.concentrix.com/"
+  },
+  {
+    "record_id": "job-45f95693ce67",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in official current list and matching JobPosting detail",
+    "url": "https://careers.wolt.com/en/jobs/4/8083233"
+  },
+  {
+    "record_id": "job-36edd1e60102",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in official current list and matching JobPosting detail",
+    "url": "https://careers.wolt.com/en/jobs/4/7984874"
+  },
+  {
+    "record_id": "job-c32803957a39",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in official current list and matching JobPosting detail",
+    "url": "https://careers.wolt.com/en/jobs/4/7925981"
+  },
+  {
+    "record_id": "project-3b99b6d6d8094ebd",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "talent_pool",
+    "evidence": "Published official Lever posting; talent pool is not a paid project",
+    "url": "https://jobs.lever.co/weloglobal/a5a093a9-2153-4ec0-b8b0-3b9da42fc51d"
+  },
+  {
+    "record_id": "project-07eddb9b3af31199",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "talent_pool",
+    "evidence": "Published official Lever posting; talent pool is not a paid project",
+    "url": "https://jobs.lever.co/weloglobal/0bfce19a-f593-45af-ac16-bd1cbef93952"
+  },
+  {
+    "record_id": "job-11756e1ac759",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://bolt.eu/en/careers/positions/0ebabc4e-e4de-42ce-8d1f-0c594f99b117/"
+  },
+  {
+    "record_id": "job-3aee2bef674a",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://www.jobs.ge/en/?id=766787&view=jobs"
+  },
+  {
+    "record_id": "job-e1b5328e7a83",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://jobs.ge/en/?id=766749&view=jobs"
+  },
+  {
+    "record_id": "job-0e23455ee165",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://www.jobs.ge/en/?id=764254&view=jobs"
+  },
+  {
+    "record_id": "job-f2a8c555a3ce",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "missing",
+    "evidence": "Absent from list; direct page HTTP 404",
+    "url": "https://careers.wolt.com/en/jobs/4/8289319"
+  },
+  {
+    "record_id": "job-397897a202c0",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://ge.linkedin.com/jobs/view/customer-support-specialist-in-healthcare-at-pharmbills-4488382542"
+  },
+  {
+    "record_id": "job-58a8fb720654",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://ge.linkedin.com/jobs/view/customer-support-specialist-at-colibrix-one-4490727543"
+  },
+  {
+    "record_id": "job-607b3376c5e2",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://ge.linkedin.com/jobs/view/customer-service-specialist-at-alps2alps-ski-transfers-4488841432"
+  },
+  {
+    "record_id": "job-02e4719170ae",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://www.jobs.ge/en/?id=768110&view=jobs"
+  },
+  {
+    "record_id": "job-4a7e7b8f4ca7",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://careers.wolt.com/en/jobs?location=Tbilisi%2C+Georgia"
+  },
+  {
+    "record_id": "job-8794d7cdc2c0",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://bolt.eu/en/careers/positions/?location=Georgia"
+  },
+  {
+    "record_id": "job-3b78b937a9cc",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://www.jobs.ge/en/?id=765175&view=jobs"
+  },
+  {
+    "record_id": "job-ecb0946c9de3",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://www.jobs.ge/en/?id=765333&view=jobs"
+  },
+  {
+    "record_id": "job-ac70cf34c382",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://ge.linkedin.com/jobs/view/qa-engineer-at-voki-games-4484960725"
+  },
+  {
+    "record_id": "job-b93de9d2b257",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://ge.linkedin.com/jobs/view/authorizations-representative-at-pharmbills-4478457980"
+  },
+  {
+    "record_id": "job-d82837a79bd8",
+    "checked_at": "2026-11-20T23:50:25+00:00",
+    "outcome": "unavailable",
+    "evidence": "No supported successful verification for this record; not evidence of closure",
+    "url": "https://jobs.concentrix.com/"
   }
 ]

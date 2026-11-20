@@ -1,7 +1,7 @@
 {
-  "last_database_update": "2026-11-20T23:44:11+00:00",
-  "last_run_at": "2026-11-20T23:43:41+00:00",
-  "automation_enabled": false,
+  "last_database_update": "2026-11-20T23:50:40+00:00",
+  "last_run_at": "2026-11-20T23:50:25+00:00",
+  "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
   "imported_platforms": 13,
