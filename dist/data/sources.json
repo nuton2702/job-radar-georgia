@@ -147,11 +147,11 @@
   {
     "id": "concentrix",
     "company": "Concentrix",
-    "url": "https://jobs.concentrix.com/",
+    "url": "https://jobs.concentrix.com/job-search/?country=Georgia",
     "platform_id": null,
-    "adapter": "public_page",
+    "adapter": "concentrix",
     "enabled": true,
-    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+    "scope": "Конкретные объявления в публичных данных списка для Грузии; отсутствие не подтверждает закрытие"
   },
   {
     "id": "linkedin",
@@ -161,5 +161,26 @@
     "adapter": "public_page",
     "enabled": true,
     "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "colibrix",
+    "company": "COLIBRIX ONE",
+    "adapter": "workable",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/colibrix-one?details=true",
+    "enabled": true,
+    "complete_list": false,
+    "scope": "Официальный список Workable вместо LinkedIn"
+  },
+  {
+    "id": "pharmbills",
+    "company": "Pharmbills",
+    "adapter": "pharmbills",
+    "url": "https://cooperation.pharmbills.com/locations/georgia",
+    "enabled": true,
+    "existing_slugs": [
+      "authorizations-representative-georgia-remote",
+      "healthcare-customer-support-georgia-remote"
+    ],
+    "scope": "Список для Грузии + конкретная карточка + ссылка отклика"
   }
 ]

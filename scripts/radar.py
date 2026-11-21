@@ -31,6 +31,15 @@ class SourceError(Exception): pass
 class HttpClient:
     def __init__(self, hosts=None): self.robots={};self.last={};self.hosts=set(hosts or ['careers.wolt.com','api.lever.co','boards-api.greenhouse.io'])
     def raw(self,url):
+        for attempt in range(3):
+            try:
+                result=self._request(url)
+            except SourceError as e:
+                if str(e) not in ['TimeoutError','URLError'] or attempt==2:raise
+                time.sleep(2**attempt);continue
+            if result[0] not in [429,500,502,503,504] or attempt==2:return result
+            time.sleep(2**attempt)
+    def _request(self,url):
         p=urlsplit(url)
         if p.scheme!='https' or p.hostname not in self.hosts: raise SourceError('URL outside source allowlist')
         delay=1.1-(time.monotonic()-self.last.get(p.hostname,0))
@@ -151,7 +160,7 @@ def apply_result(record,outcome,at,evidence,url,history,min_hours=12):
 def run(data_dir, client=None, at=None):
     d=Path(data_dir);at=at or now_iso()
     jobs=load(d/'jobs.json');platforms=load(d/'platforms.json');projects=load(d/'projects.json');history=load(d/'check-history.json');cfg=load(d/'search-config.json');sources=load(d/'sources.json');status=load(d/'update-status.json')
-    from adapters import bolt,workable,telus,public_page,jobsge
+    from adapters import bolt,workable,telus,public_page,jobsge,pharmbills,concentrix
     client=client or HttpClient({urlsplit(s['url']).hostname for s in sources if s.get('enabled')})
     status.update(last_run_at=at,last_run_outcome='running');atomic(d/'update-status.json',status)
     reports=[];found=[];success=set();before=len(jobs);source_by_id={s['id']:s for s in sources}
@@ -160,8 +169,8 @@ def run(data_dir, client=None, at=None):
         try:
             src['_config']=cfg
             src['_existing_ids']=[dict(parse_qsl(urlsplit(j['url']).query)).get('id','') for j in jobs if urlsplit(j['url']).hostname in ['jobs.ge','www.jobs.ge']]
-            records={'lever':lever,'wolt':wolt,'bolt':bolt,'workable':workable,'telus':telus,'public_page':public_page,'jobsge':jobsge}[src['adapter']](src,client)
-            success.add(src['id']);reports.append(dict(source_id=src['id'],status='ok',returned=len(records),name=src.get('company',src['id']),scope=src.get('scope',''),observation=src.get('_observation')))
+            records={'lever':lever,'wolt':wolt,'bolt':bolt,'workable':workable,'telus':telus,'public_page':public_page,'jobsge':jobsge,'pharmbills':pharmbills,'concentrix':concentrix}[src['adapter']](src,client)
+            success.add(src['id']);reports.append(dict(source_id=src['id'],status='ok',returned=len(records),name=src.get('company',src['id']),scope=src.get('scope',''),observation=src.get('_observation'),discovery=src.get('_discovery_counts')))
             for err in src.get('_detail_errors',[]):reports.append(dict(source_id=src['id'],status='detail_error',**err))
             if src['adapter']=='wolt':
                 for rec in records:
@@ -210,6 +219,11 @@ def run(data_dir, client=None, at=None):
         src=source_by_id.get(job.get('source_id'))
         if src is None and job['company']=='Wolt' and re.search(r'/en/jobs/\d+/\d+/?$',urlsplit(job['url']).path):
             src=source_by_id.get('wolt');job['source_id']='wolt';job['external_id']=job['url'].rstrip('/').split('/')[-1]
+        if src is None and urlsplit(job['url']).hostname in ['jobs.ge','www.jobs.ge']:
+            src=source_by_id.get('jobsge');job['source_id']='jobsge';job['external_id']=dict(parse_qsl(urlsplit(job['url']).query)).get('id')
+        specific=(src or {}).get('_record_results',{}).get(job.get('external_id'))
+        if specific:
+            apply_result(job,specific['outcome'],at,specific['evidence'],specific['url'],history,cfg['closure_min_hours']);continue
         if src and src['id'] in success and src['adapter'] in ['lever','workable'] and src.get('complete_list',src['adapter']=='lever'):
             # Full successfully parsed API list can establish repeated absence.
             apply_result(job,'missing',at,'Not in complete official published list',src['url'],history,cfg['closure_min_hours'])
@@ -219,7 +233,12 @@ def run(data_dir, client=None, at=None):
                 apply_result(job,'missing' if code in [404,410] else 'unavailable',at,f'Absent from list; direct page HTTP {code}',job['url'],history,cfg['closure_min_hours'])
             except SourceError as e:apply_result(job,'unavailable',at,str(e),job['url'],history)
         else:
-            apply_result(job,'unavailable',at,'No supported successful verification for this record; not evidence of closure',job['url'],history)
+            source_id=(src or {}).get('id')
+            if source_id is None and 'linkedin.com' in (urlsplit(job['url']).hostname or ''):source_id='linkedin'
+            failure=next((r.get('error') for r in reports if r['source_id']==source_id and r['status']=='error'),None)
+            reason=failure or ('Source checks only the public landing page, not this specific opening' if src and src['adapter']=='public_page' else 'No matching specific opening in connected sources; original record retained')
+            job['verification_blocker']=reason
+            apply_result(job,'unavailable',at,reason,job['url'],history)
     for pool in projects:
         if pool.get('last_checked_at')==at:continue
         pool['last_checked_at']=at;pool['status']='needs_review';pool['paid_project_confirmed']=False
@@ -254,3 +273,4 @@ if __name__=='__main__':
         raise SystemExit(1 if result['last_run_outcome']=='failed' else 0)
     except Exception as e:
         p=Path(args.data_dir)/'update-status.json';s=load(p);s.update(last_run_outcome='failed',error=type(e).__name__);atomic(p,s);raise
+

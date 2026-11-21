@@ -5,7 +5,8 @@ on:
     branches: [main, source-expansion]
     paths: ['scripts/**', 'tests/**', 'dist/data/sources.json', 'dist/data/search-config.json', '.github/workflows/radar.yml']
   schedule:
-    - cron: '0 6 * * *' # 10:00 Asia/Tbilisi; GitHub may delay scheduled runs.
+    - cron: '13 6 * * *' # 10:13 Asia/Tbilisi, away from the hourly peak.
+    - cron: '43 7,10 * * *' # Repeat checks at 11:43 and 14:43; GitHub may still delay.
 permissions:
   contents: write
 concurrency:
@@ -37,3 +38,4 @@ jobs:
             git commit -m 'Update radar source checks and data'
             git push
           fi
+

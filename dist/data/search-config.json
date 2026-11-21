@@ -112,6 +112,9 @@
   "stale_run_hours": 36,
   "source_aliases": {
     "wolt:7925981": "job-c32803957a39",
-    "bolt:40fb31d4-d082-4a8d-96c0-f05e570d184e": "job-8794d7cdc2c0"
+    "bolt:40fb31d4-d082-4a8d-96c0-f05e570d184e": "job-8794d7cdc2c0",
+    "colibrix:80C546D3CC": "job-58a8fb720654",
+    "pharmbills:authorizations-representative-georgia-remote": "job-b93de9d2b257",
+    "pharmbills:healthcare-customer-support-georgia-remote": "job-397897a202c0"
   }
 }
