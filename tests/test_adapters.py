@@ -39,6 +39,11 @@ class Adapters(unittest.TestCase):
             self.assertIsNone(job['last_verified_at']);self.assertNotIn('last_verified_at',p)
             self.assertEqual(p['availability_status'],'public_page_accessible')
             self.assertEqual(json.loads((d/'projects.json').read_text()),[])
+    def test_multi_country_posting_preserves_georgia(self):
+        from radar import classify
+        cfg=json.loads((ROOT/'dist/data/search-config.json').read_text())
+        r={'title':'English Customer Support','company':'Example','geography':'Atlanta, Georgia, United States; Tbilisi, Georgia','work_format':'Remote','employment_type':'Contract','description':''}
+        self.assertIsNotNone(classify(r,cfg))
     def test_source_error_does_not_abort_other_sources(self):
         with self.assertRaises(SourceError):workable({'url':'x'},Fake({'x':(403,'')}))
 if __name__=='__main__':unittest.main()

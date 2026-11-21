@@ -62,8 +62,7 @@ def classify(item,cfg):
     category=next((k for k,words in cfg['categories'].items() if k not in cfg.get('disabled_categories',[]) and any(w.lower() in title for w in words)),None)
     if category is None:return None
     # Location is structured source metadata, never an incidental mention in description.
-    geo=any(re.search(r'\b'+re.escape(t.lower())+r'\b',loc) for t in cfg['geographic_terms'])
-    if re.search(r'\b(atlanta|united states|usa|georgia,? us)\b',loc):geo=False
+    geo=any(any(re.search(r'\b'+re.escape(t.lower())+r'\b',place) for t in cfg['geographic_terms']) and not re.search(r'\b(atlanta|united states|usa|georgia,? us)\b',place) for place in loc.split(';'))
     worldwide=bool(re.search(r'\b(worldwide|global|anywhere)\b',loc))
     if not geo and not (worldwide and cfg.get('include_worldwide_leads',False)):return None
     for lang in cfg.get('excluded_title_languages',[]):
