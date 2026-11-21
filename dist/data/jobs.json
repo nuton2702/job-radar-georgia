@@ -22,12 +22,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-11756e1ac759",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://bolt.eu/en/careers/positions/0ebabc4e-e4de-42ce-8d1f-0c594f99b117/"
@@ -56,8 +56,8 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": "2026-06-05T10:06:14-04:00",
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
-    "last_verified_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
+    "last_verified_at": "2026-11-21T14:03:27+00:00",
     "history": [],
     "current_source": {
       "source_id": "wolt",
@@ -85,7 +85,7 @@
     "missing_count": 0,
     "last_check_result": {
       "record_id": "job-36edd1e60102",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "verified",
       "evidence": "Specific ID in official current list and matching JobPosting detail",
       "url": "https://careers.wolt.com/en/jobs/4/7984874"
@@ -114,12 +114,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-3aee2bef674a",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://www.jobs.ge/en/?id=766787&view=jobs"
@@ -148,12 +148,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-e1b5328e7a83",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://jobs.ge/en/?id=766749&view=jobs"
@@ -182,12 +182,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-0e23455ee165",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://www.jobs.ge/en/?id=764254&view=jobs"
@@ -216,8 +216,8 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": "2026-07-29T04:48:53-04:00",
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
-    "last_verified_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
+    "last_verified_at": "2026-11-21T14:03:27+00:00",
     "history": [],
     "current_source": {
       "source_id": "wolt",
@@ -245,7 +245,7 @@
     "missing_count": 0,
     "last_check_result": {
       "record_id": "job-45f95693ce67",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "verified",
       "evidence": "Specific ID in official current list and matching JobPosting detail",
       "url": "https://careers.wolt.com/en/jobs/4/8083233"
@@ -268,22 +268,22 @@
     "url": "https://careers.wolt.com/en/jobs/4/8289319",
     "priority": "A",
     "notes": "Отдельная local team роль, не дубль shared services.",
-    "status": "needs_review",
+    "status": "closed",
     "source_status": "Прямая карточка и текущий список",
     "source_sheet": "03 Full-time remote",
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "source_id": "wolt",
     "external_id": "8289319",
     "missing_since": "2026-11-20T23:43:41+00:00",
-    "missing_count": 3,
+    "missing_count": 4,
     "last_check_result": {
       "record_id": "job-f2a8c555a3ce",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "missing",
       "evidence": "Absent from list; direct page HTTP 404",
       "url": "https://careers.wolt.com/en/jobs/4/8289319"
@@ -312,12 +312,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-397897a202c0",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://ge.linkedin.com/jobs/view/customer-support-specialist-in-healthcare-at-pharmbills-4488382542"
@@ -346,12 +346,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-58a8fb720654",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://ge.linkedin.com/jobs/view/customer-support-specialist-at-colibrix-one-4490727543"
@@ -380,12 +380,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-607b3376c5e2",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://ge.linkedin.com/jobs/view/customer-service-specialist-at-alps2alps-ski-transfers-4488841432"
@@ -414,12 +414,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-02e4719170ae",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://www.jobs.ge/en/?id=768110&view=jobs"
@@ -448,8 +448,8 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": "2026-05-18T07:03:51-04:00",
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
-    "last_verified_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
+    "last_verified_at": "2026-11-21T14:03:27+00:00",
     "history": [],
     "current_source": {
       "source_id": "wolt",
@@ -477,7 +477,7 @@
     "missing_count": 0,
     "last_check_result": {
       "record_id": "job-c32803957a39",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "verified",
       "evidence": "Specific ID in official current list and matching JobPosting detail",
       "url": "https://careers.wolt.com/en/jobs/4/7925981"
@@ -506,12 +506,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-4a7e7b8f4ca7",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://careers.wolt.com/en/jobs?location=Tbilisi%2C+Georgia"
@@ -540,12 +540,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-8794d7cdc2c0",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://bolt.eu/en/careers/positions/?location=Georgia"
@@ -574,12 +574,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-3b78b937a9cc",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://www.jobs.ge/en/?id=765175&view=jobs"
@@ -608,12 +608,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-ecb0946c9de3",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://www.jobs.ge/en/?id=765333&view=jobs"
@@ -642,12 +642,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-ac70cf34c382",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://ge.linkedin.com/jobs/view/qa-engineer-at-voki-games-4484960725"
@@ -676,12 +676,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-b93de9d2b257",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://ge.linkedin.com/jobs/view/authorizations-representative-at-pharmbills-4478457980"
@@ -710,12 +710,12 @@
     "source_manual_checked_on": "2026-11-21",
     "first_seen_at": null,
     "published_at": null,
-    "last_checked_at": "2026-11-20T23:58:37+00:00",
+    "last_checked_at": "2026-11-21T14:03:27+00:00",
     "last_verified_at": null,
     "history": [],
     "last_check_result": {
       "record_id": "job-d82837a79bd8",
-      "checked_at": "2026-11-20T23:58:37+00:00",
+      "checked_at": "2026-11-21T14:03:27+00:00",
       "outcome": "unavailable",
       "evidence": "No supported successful verification for this record; not evidence of closure",
       "url": "https://jobs.concentrix.com/"

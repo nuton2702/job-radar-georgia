@@ -1,6 +1,6 @@
 {
-  "last_database_update": "2026-11-20T23:58:45+00:00",
-  "last_run_at": "2026-11-20T23:58:37+00:00",
+  "last_database_update": "2026-11-21T14:03:39+00:00",
+  "last_run_at": "2026-11-21T14:03:27+00:00",
   "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
@@ -24,5 +24,5 @@
   "total_jobs": 19,
   "coverage_note": "Автоматически: Wolt и Welo Data. Остальные источники требуют ручной проверки.",
   "schedule_configured": true,
-  "scheduled_run_confirmed": false
+  "scheduled_run_confirmed": true
 }
