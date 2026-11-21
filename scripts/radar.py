@@ -151,15 +151,18 @@ def apply_result(record,outcome,at,evidence,url,history,min_hours=12):
 def run(data_dir, client=None, at=None):
     d=Path(data_dir);at=at or now_iso()
     jobs=load(d/'jobs.json');platforms=load(d/'platforms.json');projects=load(d/'projects.json');history=load(d/'check-history.json');cfg=load(d/'search-config.json');sources=load(d/'sources.json');status=load(d/'update-status.json')
-    from adapters import bolt,workable,telus,public_page
+    from adapters import bolt,workable,telus,public_page,jobsge
     client=client or HttpClient({urlsplit(s['url']).hostname for s in sources if s.get('enabled')})
     status.update(last_run_at=at,last_run_outcome='running');atomic(d/'update-status.json',status)
     reports=[];found=[];success=set();before=len(jobs);source_by_id={s['id']:s for s in sources}
     for src in sources:
         if not src.get('enabled'):continue
         try:
-            records={'lever':lever,'wolt':wolt,'bolt':bolt,'workable':workable,'telus':telus,'public_page':public_page}[src['adapter']](src,client)
+            src['_config']=cfg
+            src['_existing_ids']=[dict(parse_qsl(urlsplit(j['url']).query)).get('id','') for j in jobs if urlsplit(j['url']).hostname in ['jobs.ge','www.jobs.ge']]
+            records={'lever':lever,'wolt':wolt,'bolt':bolt,'workable':workable,'telus':telus,'public_page':public_page,'jobsge':jobsge}[src['adapter']](src,client)
             success.add(src['id']);reports.append(dict(source_id=src['id'],status='ok',returned=len(records),name=src.get('company',src['id']),scope=src.get('scope',''),observation=src.get('_observation')))
+            for err in src.get('_detail_errors',[]):reports.append(dict(source_id=src['id'],status='detail_error',**err))
             if src['adapter']=='wolt':
                 for rec in records:
                     # Fetch only relevant titles or existing IDs; no broad scraping.
@@ -172,7 +175,7 @@ def run(data_dir, client=None, at=None):
     for rec in found:
         match=classify(copy.deepcopy(rec),cfg)
         # Existing records still get availability checks even when preferences change.
-        existing=next((j for j in jobs if (j.get('source_id')==rec['source_id'] and j.get('external_id')==rec['external_id']) or canonical(j['url'])==canonical(rec['url']) or (j['company']==rec['company'] and re.search(r'/jobs/\d+/'+re.escape(rec['external_id'])+r'/?$',urlsplit(j['url']).path))),None)
+        existing=next((j for j in jobs if (j.get('source_id')==rec['source_id'] and j.get('external_id')==rec['external_id']) or canonical(j['url'])==canonical(rec['url']) or (rec['source_id']=='jobsge' and urlsplit(j['url']).hostname in ['jobs.ge','www.jobs.ge'] and dict(parse_qsl(urlsplit(j['url']).query)).get('id')==rec['external_id']) or (j['company']==rec['company'] and re.search(r'/jobs/\d+/'+re.escape(rec['external_id'])+r'/?$',urlsplit(j['url']).path))),None)
         alias=cfg.get('source_aliases',{}).get(rec['source_id']+':'+rec['external_id'])
         if existing is None and alias:existing=next((j for j in jobs if j['id']==alias),None)
         if not match and not existing:continue
@@ -236,6 +239,9 @@ def run(data_dir, client=None, at=None):
         p['payment_verification_status']='needs_review'
         history.append(dict(record_id=p['id'],checked_at=at,outcome=p['availability_status'],evidence=p['projects_status'],url=src['url'] if src else p['url']))
     status.update(last_run_outcome='success' if success and all(r['status']=='ok' for r in reports) else ('partial' if success else 'failed'),source_results=reports,new_jobs=len(jobs)-before,checked_jobs=len(jobs),verified_jobs=sum(j['status']=='verified' for j in jobs),total_jobs=len(jobs),coverage_note='Поиск: '+', '.join(s['company'] for s in sources if s.get('enabled') and s['adapter']!='public_page')+'. Общие страницы платформ не подтверждают проекты. Ограничения и ошибки — в результатах источников.',automation_enabled=bool(status.get('automation_enabled') or os.environ.get('GITHUB_ACTIONS')=='true'),schedule_configured=bool(status.get('schedule_configured') or os.environ.get('GITHUB_ACTIONS')=='true'),scheduled_run_confirmed=bool(status.get('scheduled_run_confirmed') or os.environ.get('GITHUB_EVENT_NAME')=='schedule'))
+    source_history=load(d/'source-history.json') if (d/'source-history.json').exists() else []
+    source_history.append(dict(run_at=at,results=reports))
+    atomic(d/'source-history.json',source_history)
     # Successful save means persisted result, not verification of every record.
     for name,items in [('jobs.json',jobs),('platforms.json',platforms),('projects.json',projects),('check-history.json',history)]:atomic(d/name,items)
     status['last_database_update']=now_iso();atomic(d/'update-status.json',status)

@@ -44,6 +44,16 @@ class Adapters(unittest.TestCase):
         cfg=json.loads((ROOT/'dist/data/search-config.json').read_text())
         r={'title':'English Customer Support','company':'Example','geography':'Atlanta, Georgia, United States; Tbilisi, Georgia','work_format':'Remote','employment_type':'Contract','description':''}
         self.assertIsNotNone(classify(r,cfg))
+    def test_jobsge_requires_list_and_detail_identity(self):
+        from adapters import jobsge
+        row='<tr><td>*</td><td><a href="/en/?view=jobs&id=123">Customer Support</a></td><td></td><td>Example</td><td>21 November</td><td>21 December</td></tr>'
+        src={'id':'jobsge','company':'Jobs.ge','url':'https://jobs.ge/en/','_config':{'categories':{'Support':['customer support']}}}
+        url='https://jobs.ge/en/?view=jobs&id=123'
+        client=Fake({src['url']:(200,row),url:(200,'<p>Ad title: Customer Support Provided By: Example Deadline: 21 December Location: Remote (Georgia). Job Type: Full-time.</p>')})
+        r=jobsge(src,client)[0]
+        self.assertIsNone(r['published_at']);self.assertEqual(r['work_format'],'Remote')
+        client.pages[url]=(200,'<p>Ad title: Another role Provided By: Other Deadline: 21 December</p>')
+        self.assertEqual(jobsge(src,client),[]);self.assertTrue(src['_detail_errors'])
     def test_source_error_does_not_abort_other_sources(self):
         with self.assertRaises(SourceError):workable({'url':'x'},Fake({'x':(403,'')}))
 if __name__=='__main__':unittest.main()

@@ -77,6 +77,53 @@ def public_page(src,client):
     if code!=200:raise SourceError(f'HTTP {code}; public page not checked')
     clean=re.sub(r'<(script|style)\b[^>]*>.*?</\1>','',body,flags=re.S|re.I)
     title=re.search(r'<title[^>]*>(.*?)</title>',body,re.S|re.I)
-    if not title or len(text(clean))<100:raise SourceError('No readable public content; projects not verified')
+    if not title or text(title[1]) in ['{title}','Just a moment...','Access Denied'] or len(text(clean))<100:raise SourceError('No readable public content; projects not verified')
     src['_observation']={'page_title':text(title[1]),'content_hash':uid(text(clean)),'url':src['url'],'evidence':'Public page only; projects, country eligibility, rates and payouts NOT verified'}
     return []
+
+def jobsge(src,client):
+    from radar import SourceError,make_record,text
+    from urllib.parse import parse_qs,urlsplit
+    code,body=client.get(src['url'])
+    if code!=200:raise SourceError(f'HTTP {code}')
+    rows=re.findall(r'<tr\b[^>]*>(.*?)</tr>',body,re.S)
+    candidates={};existing=set(src.get('_existing_ids',[]))
+    cfg=src.get('_config',{});words=[w.lower() for k,ws in cfg.get('categories',{}).items() if k not in cfg.get('disabled_categories',[]) for w in ws]
+    parsed=0
+    for row in rows:
+        cells=re.findall(r'<td\b[^>]*>(.*?)</td>',row,re.S)
+        if len(cells)<6:continue
+        links=re.findall(r'<a[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>',cells[1],re.S)
+        target=next(((u,text(t)) for u,t in links if 'view=jobs' in html.unescape(u) and text(t)),None)
+        if not target:continue
+        url=urljoin(src['url'],html.unescape(target[0]));id=parse_qs(urlsplit(url).query).get('id',[''])[0]
+        if not id:continue
+        parsed+=1;title=target[1];company=text(cells[3])
+        if company.lower() in [e.lower() for e in cfg.get('excluded_employers',[])]:continue
+        if id not in existing and not any(w in title.lower() for w in words):continue
+        candidates[id]=(title,company,url,text(cells[4]),text(cells[5]))
+    if not parsed:raise SourceError('Jobs.ge list schema changed or empty')
+    # Existing records first, then a bounded daily discovery pass.
+    ordered=sorted(candidates,key=lambda id:(id not in existing,-int(id)))[:40]
+    out=[];errors=[]
+    for id in ordered:
+        title,company,url,published,deadline=candidates[id]
+        try:
+            status,detail=client.get(url)
+            if status!=200:raise SourceError(f'Detail HTTP {status}')
+            clean=text(re.sub(r'<(script|style)\b[^>]*>.*?</\1>','',detail,flags=re.S|re.I))
+            if not all(x in clean for x in ['Ad title:','Provided By:','Deadline:']) or title.casefold() not in clean.casefold() or company.casefold() not in clean.casefold():
+                raise SourceError('Detail identity not confirmed')
+            if re.search(r'advertisement (?:has )?expired|vacancy (?:is )?closed',clean,re.I):raise SourceError('Explicit closure requires review')
+            start=clean.find('Deadline:');description=clean[start:].split('⬅')[0]
+            locmatch=re.search(r'(?:Location|Based in|Office location)\s*:\s*([^.;]{2,100})',description,re.I)
+            loc=locmatch[1] if locmatch else ('Tbilisi, Georgia' if re.search(r'\bTbilisi\b',description,re.I) else '')
+            fmt='Remote' if re.search(r'fully remote|100% remote|Location:\s*Remote',description,re.I) else ('Hybrid' if re.search(r'\bhybrid\b',description,re.I) else 'Unknown')
+            employment='Part-time' if re.search(r'part[ -]time',title,re.I) else ('Full-time' if re.search(r'(?:job type|employment)\s*:\s*full[ -]time',description,re.I) else 'Уточнить')
+            rec=make_record({**src,'company':company},id,title,url,loc,description,employment,fmt)
+            rec.update(kind='job',source_published_label=published,source_deadline_label=deadline,evidence='Specific ID in current Jobs.ge list and matching title/employer in detail; source date lacks year and is not inferred')
+            out.append(rec)
+        except SourceError as e:errors.append({'url':url,'error':str(e)})
+    src['_detail_errors']=errors
+    src['_discovery_counts']={'relevant_listings':len(candidates),'details_attempted':len(ordered),'daily_limit':40}
+    return out
