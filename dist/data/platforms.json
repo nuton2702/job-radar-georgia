@@ -12,9 +12,9 @@
     "notes": "$10–$30 за сценарий или $5–$50+ за баг",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Источник недоступен для проверки",
     "verified_rates": null,
-    "last_checked_at": null,
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
     "last_verified_at": null,
     "availability_status": "needs_review",
     "payment_verification_status": "needs_review"
@@ -32,12 +32,19 @@
     "notes": "$25–$100+ за завершённый сет",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Проверена только публичная страница; проекты и выплаты не подтверждены",
     "verified_rates": null,
-    "last_checked_at": null,
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
     "last_verified_at": null,
-    "availability_status": "needs_review",
-    "payment_verification_status": "needs_review"
+    "availability_status": "public_page_accessible",
+    "payment_verification_status": "needs_review",
+    "public_page_checked_at": "2026-11-21T14:29:06+00:00",
+    "public_observation": {
+      "page_title": "Projects | DataForce Community",
+      "content_hash": "2bdb241afac16a79",
+      "url": "https://dataforcecommunity.transperfect.com/projects",
+      "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+    }
   },
   {
     "id": "platform-e5d4686aa4",
@@ -52,9 +59,9 @@
     "notes": "Опыт работы с людьми в баре — сильный плюс",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Источник недоступен для проверки",
     "verified_rates": null,
-    "last_checked_at": null,
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
     "last_verified_at": null,
     "availability_status": "needs_review",
     "payment_verification_status": "needs_review"
@@ -72,9 +79,9 @@
     "notes": "Есть наборы под Грузию (RU/EN), свободный график",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Источник недоступен для проверки",
     "verified_rates": null,
-    "last_checked_at": null,
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
     "last_verified_at": null,
     "availability_status": "needs_review",
     "payment_verification_status": "needs_review"
@@ -92,12 +99,14 @@
     "notes": "Грузия в списке одобренных стран, регистрация 5 мин",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Проверен официальный список; оплачиваемые проекты не гарантированы",
+    "projects_status": "Проверен публичный список; доступность конкретных проектов для вас не гарантирована",
     "verified_rates": null,
-    "last_checked_at": "2026-11-21T14:03:27+00:00",
-    "last_verified_at": "2026-11-21T14:03:27+00:00",
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
+    "last_verified_at": "2026-11-21T14:29:06+00:00",
     "availability_status": "official_board_accessible",
-    "payment_verification_status": "needs_review"
+    "payment_verification_status": "needs_review",
+    "public_page_checked_at": "2026-11-21T14:29:06+00:00",
+    "public_observation": null
   },
   {
     "id": "platform-08ff378c91",
@@ -112,12 +121,14 @@
     "notes": "Гибкий part-time, прозрачные правила",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Проверен публичный список; доступность конкретных проектов для вас не гарантирована",
     "verified_rates": null,
-    "last_checked_at": null,
-    "last_verified_at": null,
-    "availability_status": "needs_review",
-    "payment_verification_status": "needs_review"
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
+    "last_verified_at": "2026-11-21T14:29:06+00:00",
+    "availability_status": "official_board_accessible",
+    "payment_verification_status": "needs_review",
+    "public_page_checked_at": "2026-11-21T14:29:06+00:00",
+    "public_observation": null
   },
   {
     "id": "platform-f3c8729c25",
@@ -132,12 +143,19 @@
     "notes": "Читать гайдлайны внимательно, раскачка 2–6 недель",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Проверена только публичная страница; проекты и выплаты не подтверждены",
     "verified_rates": null,
-    "last_checked_at": null,
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
     "last_verified_at": null,
-    "availability_status": "needs_review",
-    "payment_verification_status": "needs_review"
+    "availability_status": "public_page_accessible",
+    "payment_verification_status": "needs_review",
+    "public_page_checked_at": "2026-11-21T14:29:06+00:00",
+    "public_observation": {
+      "page_title": "Earn Money Training AI — Remote Projects for Experts | Mindrift AI Training Jobs Remote Work",
+      "content_hash": "059ceba8fcaf55a3",
+      "url": "https://mindrift.ai/apply",
+      "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+    }
   },
   {
     "id": "platform-cfd650bfda",
@@ -152,12 +170,19 @@
     "notes": "Указать все языки в профиле для выдачи проектов",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Проверена только публичная страница; проекты и выплаты не подтверждены",
     "verified_rates": null,
-    "last_checked_at": null,
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
     "last_verified_at": null,
-    "availability_status": "needs_review",
-    "payment_verification_status": "needs_review"
+    "availability_status": "public_page_accessible",
+    "payment_verification_status": "needs_review",
+    "public_page_checked_at": "2026-11-21T14:29:06+00:00",
+    "public_observation": {
+      "page_title": "Open Freelance Projects | OneForma",
+      "content_hash": "b92f79dc308613b1",
+      "url": "https://www.oneforma.com/projects/",
+      "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+    }
   },
   {
     "id": "platform-3fabc30a15",
@@ -172,9 +197,9 @@
     "notes": "Подаваться сразу на 3–5 проектов",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Источник недоступен для проверки",
     "verified_rates": null,
-    "last_checked_at": null,
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
     "last_verified_at": null,
     "availability_status": "needs_review",
     "payment_verification_status": "needs_review"
@@ -192,12 +217,19 @@
     "notes": "Высокие ставки, но бывают простои (EQ) и строгий контроль VPN/KYC",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Проверена только публичная страница; проекты и выплаты не подтверждены",
     "verified_rates": null,
-    "last_checked_at": null,
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
     "last_verified_at": null,
-    "availability_status": "needs_review",
-    "payment_verification_status": "needs_review"
+    "availability_status": "public_page_accessible",
+    "payment_verification_status": "needs_review",
+    "public_page_checked_at": "2026-11-21T14:29:06+00:00",
+    "public_observation": {
+      "page_title": "Train the Next Generation of AI as an Expert| Outlier AI",
+      "content_hash": "892c9cd3fd1a790e",
+      "url": "https://outlier.ai",
+      "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+    }
   },
   {
     "id": "platform-50a00d31bd",
@@ -212,12 +244,14 @@
     "notes": "Бывают гибкие проекты; упаковать опыт в баре в резюме",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Проверен публичный список; доступность конкретных проектов для вас не гарантирована",
     "verified_rates": null,
-    "last_checked_at": null,
-    "last_verified_at": null,
-    "availability_status": "needs_review",
-    "payment_verification_status": "needs_review"
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
+    "last_verified_at": "2026-11-21T14:29:06+00:00",
+    "availability_status": "official_board_accessible",
+    "payment_verification_status": "needs_review",
+    "public_page_checked_at": "2026-11-21T14:29:06+00:00",
+    "public_observation": null
   },
   {
     "id": "platform-976dac6e9c",
@@ -232,12 +266,19 @@
     "notes": "Проверять 2 раза в неделю, есть отдельный раздел AI data work",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Проверена только публичная страница; проекты и выплаты не подтверждены",
     "verified_rates": null,
-    "last_checked_at": null,
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
     "last_verified_at": null,
-    "availability_status": "needs_review",
-    "payment_verification_status": "needs_review"
+    "availability_status": "public_page_accessible",
+    "payment_verification_status": "needs_review",
+    "public_page_checked_at": "2026-11-21T14:29:06+00:00",
+    "public_observation": {
+      "page_title": "Remote Jobs | Diaspire",
+      "content_hash": "72711c626dfc9cc8",
+      "url": "https://jobs.diaspire.app",
+      "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+    }
   },
   {
     "id": "platform-193e339f6e",
@@ -252,11 +293,18 @@
     "notes": "Отфильтровано под Грузию, можно оставить резюме в базе",
     "georgia_eligible": "needs_review",
     "kyc": "Требования уточнить",
-    "projects_status": "Автопроверка не подключена",
+    "projects_status": "Проверена только публичная страница; проекты и выплаты не подтверждены",
     "verified_rates": null,
-    "last_checked_at": null,
+    "last_checked_at": "2026-11-21T14:29:06+00:00",
     "last_verified_at": null,
-    "availability_status": "needs_review",
-    "payment_verification_status": "needs_review"
+    "availability_status": "public_page_accessible",
+    "payment_verification_status": "needs_review",
+    "public_page_checked_at": "2026-11-21T14:29:06+00:00",
+    "public_observation": {
+      "page_title": "Remote Jobs with US & European Companies in Georgia | Stafka",
+      "content_hash": "9b052b12d137f078",
+      "url": "https://stafka.com/ge",
+      "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+    }
   }
 ]
