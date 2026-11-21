@@ -17,5 +17,149 @@
     "platform_id": "platform-1a0422d1dd",
     "scope": "Публичный API; talent pools отдельно от оплачиваемых работ",
     "documentation": "https://github.com/lever/postings-api"
+  },
+  {
+    "id": "bolt",
+    "company": "Bolt",
+    "adapter": "bolt",
+    "url": "https://bolt.eu/en/careers/positions/?location=Georgia",
+    "enabled": true,
+    "scope": "Поиск и проверка конкретных вакансий; отсутствие в списке не закрывает запись"
+  },
+  {
+    "id": "rws",
+    "company": "RWS TrainAI",
+    "adapter": "lever",
+    "url": "https://api.lever.co/v0/postings/rws?mode=json",
+    "enabled": true,
+    "platform_id": "platform-08ff378c91",
+    "scope": "Публичный список Lever; базы кандидатов отдельно"
+  },
+  {
+    "id": "supportyourapp",
+    "company": "SupportYourApp",
+    "adapter": "workable",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/supportyourapp?details=true",
+    "enabled": true,
+    "complete_list": false,
+    "platform_id": "platform-50a00d31bd",
+    "scope": "Публичный список Workable; отсутствие не подтверждает закрытие"
+  },
+  {
+    "id": "telus",
+    "company": "TELUS Digital AI",
+    "adapter": "telus",
+    "url": "https://jobs.telusdigital.com/search/cfm5/ai-community/jobs",
+    "enabled": true,
+    "platform_id": "platform-d82366f358",
+    "scope": "Публичный список AI Community, с проверкой страниц пагинации"
+  },
+  {
+    "id": "utest",
+    "company": "uTest",
+    "url": "https://www.utest.com",
+    "platform_id": "platform-169d997c2e",
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "dataforce",
+    "company": "DataForce",
+    "url": "https://dataforcecommunity.transperfect.com/projects",
+    "platform_id": "platform-a5cdae8bf5",
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "modsquad",
+    "company": "ModSquad",
+    "url": "https://join.modsquad.com/careers/",
+    "platform_id": "platform-e5d4686aa4",
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "mindrift",
+    "company": "Mindrift",
+    "url": "https://mindrift.ai/apply",
+    "platform_id": "platform-f3c8729c25",
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "oneforma",
+    "company": "OneForma",
+    "url": "https://www.oneforma.com/projects/",
+    "platform_id": "platform-cfd650bfda",
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "crowdgen",
+    "company": "CrowdGen",
+    "url": "https://crowdgen.com/experts/",
+    "platform_id": "platform-3fabc30a15",
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "outlier",
+    "company": "Outlier",
+    "url": "https://outlier.ai",
+    "platform_id": "platform-ae6128d58e",
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "diaspire",
+    "company": "Diaspire",
+    "url": "https://jobs.diaspire.app",
+    "platform_id": "platform-976dac6e9c",
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "stafka",
+    "company": "Stafka",
+    "url": "https://stafka.com/ge",
+    "platform_id": "platform-193e339f6e",
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "jobsge",
+    "company": "Jobs.ge",
+    "url": "https://jobs.ge/en/",
+    "platform_id": null,
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "concentrix",
+    "company": "Concentrix",
+    "url": "https://jobs.concentrix.com/",
+    "platform_id": null,
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
+  },
+  {
+    "id": "linkedin",
+    "company": "LinkedIn",
+    "url": "https://www.linkedin.com/jobs/",
+    "platform_id": null,
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены."
   }
 ]

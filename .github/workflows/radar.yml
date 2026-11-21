@@ -1,12 +1,15 @@
 name: Update job radar
 on:
   workflow_dispatch:
+  push:
+    branches: [main, source-expansion]
+    paths: ['scripts/**', 'tests/**', 'dist/data/sources.json', 'dist/data/search-config.json', '.github/workflows/radar.yml']
   schedule:
     - cron: '0 6 * * *' # 10:00 Asia/Tbilisi; GitHub may delay scheduled runs.
 permissions:
   contents: write
 concurrency:
-  group: radar-data
+  group: radar-data-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   update:
@@ -25,7 +28,7 @@ jobs:
         if: always()
         run: python scripts/build.py
       - name: Save results and failure history
-        if: always()
+        if: always() && github.ref == 'refs/heads/main'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

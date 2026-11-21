@@ -1,6 +1,6 @@
 """Small, conservative public-source job monitor. Python standard library only."""
 from __future__ import annotations
-import argparse, copy, hashlib, html, json, os, re, tempfile, time
+import argparse, copy, hashlib, html, json, os, re, tempfile, time, sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -8,8 +8,9 @@ from urllib.error import HTTPError
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode, urljoin
 from urllib.robotparser import RobotFileParser
 
+sys.modules.setdefault('radar',sys.modules[__name__])
 ROOT = Path(__file__).resolve().parents[1]
-UA = 'JobRadarGeorgia/0.2 (+https://github.com/nuton2702/job-radar-georgia)'
+UA = 'JobRadarGeorgia/0.3 (+https://github.com/nuton2702/job-radar-georgia)'
 
 def now_iso(): return datetime.now(timezone.utc).isoformat(timespec='seconds')
 def stamp(s): return datetime.fromisoformat(s.replace('Z','+00:00'))
@@ -28,16 +29,16 @@ def atomic(path, value):
 
 class SourceError(Exception): pass
 class HttpClient:
-    def __init__(self): self.robots={};self.last={}
+    def __init__(self, hosts=None): self.robots={};self.last={};self.hosts=set(hosts or ['careers.wolt.com','api.lever.co','boards-api.greenhouse.io'])
     def raw(self,url):
         p=urlsplit(url)
-        if p.scheme!='https' or p.hostname not in {'careers.wolt.com','api.lever.co','boards-api.greenhouse.io'}: raise SourceError('URL outside source allowlist')
+        if p.scheme!='https' or p.hostname not in self.hosts: raise SourceError('URL outside source allowlist')
         delay=1.1-(time.monotonic()-self.last.get(p.hostname,0))
         if delay>0: time.sleep(delay)
         self.last[p.hostname]=time.monotonic()
         try:
             with urlopen(Request(url,headers={'User-Agent':UA,'Accept':'application/json,text/html;q=0.9'}),timeout=25) as r:
-                if urlsplit(r.url).hostname not in {'careers.wolt.com','api.lever.co','boards-api.greenhouse.io'}:raise SourceError('Unexpected redirect')
+                if urlsplit(r.url).hostname not in self.hosts:raise SourceError('Unexpected redirect')
                 data=r.read(12_000_001)
                 if len(data)>12_000_000: raise SourceError('Response exceeds safety limit')
                 return r.status,data.decode('utf-8')
@@ -149,15 +150,17 @@ def apply_result(record,outcome,at,evidence,url,history,min_hours=12):
     history.append(event)
 
 def run(data_dir, client=None, at=None):
-    d=Path(data_dir);at=at or now_iso();client=client or HttpClient()
+    d=Path(data_dir);at=at or now_iso()
     jobs=load(d/'jobs.json');platforms=load(d/'platforms.json');projects=load(d/'projects.json');history=load(d/'check-history.json');cfg=load(d/'search-config.json');sources=load(d/'sources.json');status=load(d/'update-status.json')
+    from adapters import bolt,workable,telus,public_page
+    client=client or HttpClient({urlsplit(s['url']).hostname for s in sources if s.get('enabled')})
     status.update(last_run_at=at,last_run_outcome='running');atomic(d/'update-status.json',status)
     reports=[];found=[];success=set();before=len(jobs);source_by_id={s['id']:s for s in sources}
     for src in sources:
         if not src.get('enabled'):continue
         try:
-            records={'lever':lever,'wolt':wolt}[src['adapter']](src,client)
-            success.add(src['id']);reports.append(dict(source_id=src['id'],status='ok',returned=len(records)))
+            records={'lever':lever,'wolt':wolt,'bolt':bolt,'workable':workable,'telus':telus,'public_page':public_page}[src['adapter']](src,client)
+            success.add(src['id']);reports.append(dict(source_id=src['id'],status='ok',returned=len(records),name=src.get('company',src['id']),scope=src.get('scope',''),observation=src.get('_observation')))
             if src['adapter']=='wolt':
                 for rec in records:
                     # Fetch only relevant titles or existing IDs; no broad scraping.
@@ -165,7 +168,7 @@ def run(data_dir, client=None, at=None):
                     try:found.append(wolt_detail(rec,client))
                     except SourceError as e:reports.append(dict(source_id=src['id'],status='detail_error',url=rec['url'],error=str(e)))
             else:found.extend(records)
-        except (SourceError,KeyError,ValueError) as e:reports.append(dict(source_id=src['id'],status='error',error=str(e)))
+        except (SourceError,KeyError,ValueError,TypeError) as e:reports.append(dict(source_id=src['id'],status='error',name=src.get('company',src['id']),scope=src.get('scope',''),error=str(e)))
     updated=set();seen=set()
     for rec in found:
         match=classify(copy.deepcopy(rec),cfg)
@@ -205,7 +208,7 @@ def run(data_dir, client=None, at=None):
         src=source_by_id.get(job.get('source_id'))
         if src is None and job['company']=='Wolt' and re.search(r'/en/jobs/\d+/\d+/?$',urlsplit(job['url']).path):
             src=source_by_id.get('wolt');job['source_id']='wolt';job['external_id']=job['url'].rstrip('/').split('/')[-1]
-        if src and src['id'] in success and src['adapter']=='lever':
+        if src and src['id'] in success and src['adapter'] in ['lever','workable'] and src.get('complete_list',src['adapter']=='lever'):
             # Full successfully parsed API list can establish repeated absence.
             apply_result(job,'missing',at,'Not in complete official published list',src['url'],history,cfg['closure_min_hours'])
         elif src and src['id'] in success and src['adapter']=='wolt' and job.get('external_id') and not any(r['external_id']==job['external_id'] for r in found):
@@ -224,11 +227,16 @@ def run(data_dir, client=None, at=None):
         if src:
             p['last_checked_at']=at
             if src['id'] in success:
-                p['last_verified_at']=at;p['availability_status']='official_board_accessible';p['projects_status']='Проверен официальный список; оплачиваемые проекты не гарантированы'
+                p['availability_status']='public_page_accessible' if src['adapter']=='public_page' else 'official_board_accessible'
+                p['public_page_checked_at']=at
+                p['projects_status']='Проверена только публичная страница; проекты и выплаты не подтверждены' if src['adapter']=='public_page' else 'Проверен публичный список; доступность конкретных проектов для вас не гарантирована'
+                if src['adapter']!='public_page':p['last_verified_at']=at
+                p['public_observation']=src.get('_observation')
             else:p['availability_status']='needs_review';p['projects_status']='Источник недоступен для проверки'
         else:p['availability_status']='needs_review';p['projects_status']='Автопроверка не подключена'
         p['payment_verification_status']='needs_review'
-    status.update(last_run_outcome='success' if success and all(r['status']=='ok' for r in reports) else ('partial' if success else 'failed'),source_results=reports,new_jobs=len(jobs)-before,checked_jobs=len(jobs),verified_jobs=sum(j['status']=='verified' for j in jobs),total_jobs=len(jobs),coverage_note='Автоматически: Wolt и Welo Data. Остальные источники требуют ручной проверки.',automation_enabled=bool(status.get('automation_enabled') or os.environ.get('GITHUB_ACTIONS')=='true'),schedule_configured=bool(status.get('schedule_configured') or os.environ.get('GITHUB_ACTIONS')=='true'),scheduled_run_confirmed=bool(status.get('scheduled_run_confirmed') or os.environ.get('GITHUB_EVENT_NAME')=='schedule'))
+        history.append(dict(record_id=p['id'],checked_at=at,outcome=p['availability_status'],evidence=p['projects_status'],url=src['url'] if src else p['url']))
+    status.update(last_run_outcome='success' if success and all(r['status']=='ok' for r in reports) else ('partial' if success else 'failed'),source_results=reports,new_jobs=len(jobs)-before,checked_jobs=len(jobs),verified_jobs=sum(j['status']=='verified' for j in jobs),total_jobs=len(jobs),coverage_note='Поиск: '+', '.join(s['company'] for s in sources if s.get('enabled') and s['adapter']!='public_page')+'. Общие страницы платформ не подтверждают проекты. Ограничения и ошибки — в результатах источников.',automation_enabled=bool(status.get('automation_enabled') or os.environ.get('GITHUB_ACTIONS')=='true'),schedule_configured=bool(status.get('schedule_configured') or os.environ.get('GITHUB_ACTIONS')=='true'),scheduled_run_confirmed=bool(status.get('scheduled_run_confirmed') or os.environ.get('GITHUB_EVENT_NAME')=='schedule'))
     # Successful save means persisted result, not verification of every record.
     for name,items in [('jobs.json',jobs),('platforms.json',platforms),('projects.json',projects),('check-history.json',history)]:atomic(d/name,items)
     status['last_database_update']=now_iso();atomic(d/'update-status.json',status)
