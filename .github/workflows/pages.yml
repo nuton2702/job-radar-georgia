@@ -29,6 +29,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -v
+      - run: node --check dist/app.js
       - run: python scripts/build.py
       - name: Prepare public site
         run: |
@@ -42,3 +43,7 @@ jobs:
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+      - name: Verify public site and database
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python scripts/verify_public.py
