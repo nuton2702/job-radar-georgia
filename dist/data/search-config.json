@@ -98,7 +98,13 @@
     "Italian",
     "Arabic",
     "Hebrew",
-    "Turkish"
+    "Turkish",
+    "Azerbaijani",
+    "Kazakh",
+    "Mongolian",
+    "Tajik",
+    "Turkmen",
+    "Ukrainian"
   ],
   "exclude_senior_titles": true,
   "disabled_categories": [],

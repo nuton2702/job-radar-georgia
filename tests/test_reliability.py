@@ -30,3 +30,13 @@ class Reliability(unittest.TestCase):
             self.assertEqual(c.raw('x'),(200,'ok'));self.assertEqual(request.call_count,2)
         with patch.object(c,'_request',return_value=(403,'')) as request:
             self.assertEqual(c.raw('x'),(403,''));self.assertEqual(request.call_count,1)
+
+    def test_concentrix_skips_disabled_and_incomplete(self):
+        from adapters import concentrix
+        row=dict(ats_external_id='GE-1',job_title='Customer Support',country='Georgia',city='Tbilisi',long_description='English support',apply_url='https://example.com/apply',allow_applications='1',publish_on_job_listing='1')
+        rows=[row,{**row,'ats_external_id':'GE-2','allow_applications':'0'},{**row,'ats_external_id':'GE-3','long_description':''}]
+        body='<script type="application/json" id="jobsData">'+json.dumps({'ok':True,'data':rows})+'</script>'
+        src={'id':'concentrix','company':'Concentrix','url':'x'}
+        result=concentrix(src,Fake({'x':(200,body)}))
+        self.assertEqual([r['external_id'] for r in result],['GE-1'])
+        self.assertEqual(len(src['_detail_errors']),1)

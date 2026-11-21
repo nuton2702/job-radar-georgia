@@ -188,9 +188,12 @@ def concentrix(src,client):
     data=json.loads(block[1])
     if not data.get('ok') or not isinstance(data.get('data'),list) or not data['data']:raise SourceError('Official job list empty or invalid')
     out=[]
+    src['_detail_errors']=[]
     for j in data['data']:
         if j.get('country')!='Georgia':continue
-        if not all(j.get(k) for k in ['ats_external_id','job_title','long_description','apply_url']):raise SourceError('Missing posting identity or application link')
+        if str(j.get('allow_applications')) not in ['1','True'] or str(j.get('publish_on_job_listing')) not in ['1','True']:continue
+        if not all(j.get(k) for k in ['ats_external_id','job_title','long_description','apply_url']):
+            src['_detail_errors'].append({'url':src['url'],'error':'Incomplete posting '+str(j.get('ats_external_id'))});continue
         id=j['ats_external_id'];url='https://jobs.concentrix.com/job/?id='+id
         rec=make_record(src,id,j['job_title'].strip(),url,', '.join([j.get('city',''),'Georgia']),j['long_description'],'Full-time' if j.get('job_type')=='full_time' else 'Уточнить','Unknown')
         rec.update(kind='job',evidence='Specific opening in official embedded jobsData for Georgia with application URL',application_url=j['apply_url'])
