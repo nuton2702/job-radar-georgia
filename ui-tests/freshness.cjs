@@ -17,6 +17,7 @@ await page.locator('[data-new-jobs]').click();
 await page.waitForFunction(()=>document.querySelector('#resultCount').textContent.includes(': 1 из'));
 assert.equal(await page.locator('[data-filter="freshness"]').inputValue(),'1');
 assert.equal(await page.locator('#sort').inputValue(),'newest');
+await page.locator('#filterToggle').click();
 await page.locator('[data-filter="freshness"]').selectOption('7');
 assert.match(await page.locator('#resultCount').textContent(),/: 2 из/);
 await page.locator('[data-filter="freshness"]').selectOption('30');
