@@ -65,7 +65,30 @@ class HttpClient:
 
 def languages(s):
     return [code for code,term in {'RU':'russian','EN':'english','GE':'georgian'}.items() if re.search(r'\b'+term+r'\b',s,re.I)]
+
+def language_blocker(item,cfg):
+    """Reject explicit unsupported language requirements, not incidental mentions."""
+    aliases={'German':['german','deutsch','немецк','გერმანულ'],'French':['french','français','француз','ფრანგულ'],'Italian':['italian','итальян','იტალიურ'],'Spanish':['spanish','испанск','ესპანურ']}
+    title=item.get('title','').lower()
+    for lang in cfg.get('excluded_title_languages',[]):
+        if any(re.search(r'\b'+re.escape(a),title) for a in aliases.get(lang,[lang.lower()])):
+            return 'Требуется неподходящий язык в названии: '+lang
+    body=item.get('description','')
+    for clause in re.split(r'[.!?;\n]+',body):
+        low=clause.lower()
+        if re.search(r'not required|no .{0,30}required|optional|nice to have|a plus|preferred|не обязател',low):continue
+        if not re.search(r'[- ]speaking|fluent|fluency|proficien|command of|must|required|[bc][12]|свободн|обязател|თავისუფლ',low):continue
+        # Alternatives including an accepted language do not require every language.
+        if re.search(r'\b(?:or|either)\b',low) and any(re.search(r'\b'+x+r'\b',low) for x in ['english','russian','georgian']):continue
+        for lang in cfg.get('excluded_title_languages',[]):
+            forms=aliases.get(lang,[lang.lower()])
+            explicit=any(re.search(r'\b'+re.escape(a)+r'\w*(?:[- ]speaking|\s+(?:language\s+)?(?:is\s+)?(?:required|mandatory|proficiency|fluency|[bc][12]))',low) or re.search(r'(?:fluent|fluency|proficiency|command|speak fluently|свободн\w*)\s+(?:(?:in|of|the)\s+)*'+re.escape(a),low) for a in forms)
+            if explicit:
+                return 'Языковое требование не подходит: '+lang+'. '+clause.strip()[:400]
+    return None
+
 def classify(item,cfg):
+    if language_blocker(item,cfg):return None
     title=item['title'].lower(); body=item.get('description','').lower();loc=item.get('geography','').lower()
     if item['company'].lower() in [x.lower() for x in cfg['excluded_employers']]:return None
     category=next((k for k,words in cfg['categories'].items() if k not in cfg.get('disabled_categories',[]) and any(w.lower() in title for w in words)),None)
@@ -182,6 +205,7 @@ def run(data_dir, client=None, at=None):
         except (SourceError,KeyError,ValueError,TypeError) as e:reports.append(dict(source_id=src['id'],status='error',name=src.get('company',src['id']),scope=src.get('scope',''),error=str(e)))
     updated=set();seen=set()
     for rec in found:
+        blocked_language=language_blocker(rec,cfg)
         match=classify(copy.deepcopy(rec),cfg)
         # Existing records still get availability checks even when preferences change.
         existing=next((j for j in jobs if (j.get('source_id')==rec['source_id'] and j.get('external_id')==rec['external_id']) or canonical(j['url'])==canonical(rec['url']) or (rec['source_id']=='jobsge' and urlsplit(j['url']).hostname in ['jobs.ge','www.jobs.ge'] and dict(parse_qsl(urlsplit(j['url']).query)).get('id')==rec['external_id']) or (j['company']==rec['company'] and re.search(r'/jobs/\d+/'+re.escape(rec['external_id'])+r'/?$',urlsplit(j['url']).path))),None)
@@ -211,7 +235,13 @@ def run(data_dir, client=None, at=None):
             if not existing.get('published_at'):existing['published_at']=rec.get('published_at')
         else:existing.update(match or rec)
         existing['payment_eligibility']='needs_review';existing['match_status']='matched' if match else 'outside_current_config'
-        apply_result(existing,'verified',at,rec['evidence'],rec['url'],history);updated.add(existing['id'])
+        if blocked_language:
+            existing['match_status']='excluded_language';existing['exclusion_reason']=blocked_language;existing['match_notes']=blocked_language
+            apply_result(existing,'excluded',at,blocked_language,rec['url'],history)
+        else:
+            existing.pop('exclusion_reason',None)
+            apply_result(existing,'verified',at,rec['evidence'],rec['url'],history)
+        updated.add(existing['id'])
     for job in jobs:
         if job['company'].lower() in [x.lower() for x in cfg['excluded_employers']]:
             apply_result(job,'excluded',at,'Employer excluded by configuration',job['url'],history);continue
