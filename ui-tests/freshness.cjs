@@ -27,7 +27,8 @@ await page.locator('#reset').click();
 assert.match(await page.locator('#resultCount').textContent(),/: 5 из/);
 for(const width of [320,375,390,430,768,1024,1440]){
  await page.setViewportSize({width,height:900});
- assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`Overflow at ${width}`);
+ const overflow=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,elements:[...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>innerWidth+1).map(e=>({tag:e.tagName,cls:e.className,id:e.id,right:e.getBoundingClientRect().right})).slice(-15)}));
+ assert(overflow.scroll<=width,`Overflow at ${width}: ${JSON.stringify(overflow)}`);
 }
 assert.equal(await page.locator('tbody .badge.new').count(),1);
 assert.deepEqual(errors,[]);
