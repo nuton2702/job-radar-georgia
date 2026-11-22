@@ -1,6 +1,6 @@
 {
-  "last_database_update": "2026-11-22T00:52:11+00:00",
-  "last_run_at": "2026-11-22T00:50:17+00:00",
+  "last_database_update": "2026-11-22T10:22:15+00:00",
+  "last_run_at": "2026-11-22T10:20:30+00:00",
   "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
@@ -158,7 +158,7 @@
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "observation": {
         "page_title": "Remote Jobs with US & European Companies in Georgia | Stafka",
-        "content_hash": "6884c4aaeb6595b1",
+        "content_hash": "1c8039caeab3d6c3",
         "url": "https://stafka.com/ge",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
       },
@@ -219,9 +219,9 @@
       "discovery": null
     }
   ],
-  "new_jobs": 5,
+  "new_jobs": 0,
   "checked_jobs": 26,
-  "verified_jobs": 21,
+  "verified_jobs": 20,
   "total_jobs": 26,
   "coverage_note": "Поиск: Wolt, Welo Data, Bolt, RWS TrainAI, SupportYourApp, TELUS Digital AI, Jobs.ge, Concentrix, COLIBRIX ONE, Pharmbills. Общие страницы платформ не подтверждают проекты. Ограничения и ошибки — в результатах источников.",
   "schedule_configured": true,
