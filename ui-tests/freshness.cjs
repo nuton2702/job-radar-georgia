@@ -8,8 +8,9 @@ await page.route('**/*',r=>r.abort());
 const errors=[];page.on('pageerror',e=>errors.push(String(e)));
 const data=JSON.parse(fs.readFileSync(process.argv[2]||'dist/data/bundle.json','utf8'));
 const now=Date.now();
-data.jobs=data.jobs.slice(0,5).map((j,i)=>({...j,id:'fixture-'+i,first_seen_at:[now-3600000,now-2*86400000,now-10*86400000,null,now+86400000][i]}));
+data.jobs=data.jobs.slice(0,5).map((j,i)=>({...j,id:'fixture-'+i,status:'needs_review',first_seen_at:[now-3600000,now-2*86400000,now-10*86400000,null,now+86400000][i]}));
 data.jobs.forEach(j=>{if(j.first_seen_at)j.first_seen_at=new Date(j.first_seen_at).toISOString()});
+data.jobs.push({...data.jobs[0],id:'closed-fixture',status:'closed',title:'Closed fixture'}, {...data.jobs[0],id:'archived-fixture',status:'archived',title:'Archived fixture'});
 let html=fs.readFileSync('dist/index.html','utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').replace(/<link\b[^>]*>/g,'');
 await page.setContent(html);await page.addStyleTag({path:'dist/style.css'});
 await page.evaluate(d=>window.RADAR_DATA=d,data);await page.addScriptTag({path:'dist/app.js'});
@@ -44,6 +45,22 @@ for(const width of [320,390,1440]){
   if(width<768)await page.touchscreen.tap(...point);else await page.mouse.click(...point);
   assert(!(await page.locator('#detail').evaluate(e=>e.open)),side+' backdrop did not close at '+width);
  }
+}
+for(const width of [390,1440]){
+ await page.setViewportSize({width,height:900});
+ await page.locator('[data-page="archive"]').click();
+ await page.waitForFunction(()=>document.querySelector('#title').textContent==='Архив вакансий');
+ assert.match(await page.locator('#resultCount').textContent(),/: 2 из 2/);
+ assert.equal(await page.locator('tbody tr').count(),2);
+ assert.equal(await page.locator('tbody').getByText('Closed fixture',{exact:true}).count(),1);
+ assert.equal(await page.locator('tbody').getByText('Archived fixture',{exact:true}).count(),1);
+ await page.locator('#reset').click();
+ assert.match(await page.locator('#resultCount').textContent(),/: 2 из 2/);
+ await page.locator('#archiveSwitch [data-page="jobs"]').click();
+ await page.waitForFunction(()=>document.querySelector('#title').textContent==='Вакансии');
+ assert.match(await page.locator('#resultCount').textContent(),/: 5 из 5/);
+ assert.equal(await page.locator('tbody').getByText('Closed fixture',{exact:true}).count(),0);
+ assert.equal(await page.locator('tbody').getByText('Archived fixture',{exact:true}).count(),0);
 }
 assert.deepEqual(errors,[]);
 console.log('PASS: freshness ranges, unknown/future dates, newest sorting, overview shortcut, reset and seven viewport widths');
