@@ -9,6 +9,7 @@ on:
     branches: [main]
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 concurrency:
@@ -40,6 +41,21 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: public-site
+      - name: Wait for uploaded artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for attempt in $(seq 1 18); do
+            count=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=github-pages" --jq '.artifacts | map(select(.expired == false)) | length') || count=0
+            if [ "$count" = "1" ]; then
+              echo "Pages artifact is visible through the API."
+              exit 0
+            fi
+            echo "Waiting for Pages artifact metadata ($attempt/18)."
+            sleep 10
+          done
+          echo "::error::Uploaded Pages artifact did not become visible."
+          exit 1
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
