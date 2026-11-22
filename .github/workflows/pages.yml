@@ -26,22 +26,43 @@ jobs:
       - uses: actions/checkout@v7
         with:
           ref: main
+      - name: Check whether radar saved this run
+        id: fresh
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SOURCE_RUN_ID: ${{ github.event.workflow_run.id }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          status = json.loads(Path('dist/data/update-status.json').read_text())
+          publish = os.environ['EVENT_NAME'] != 'workflow_run' or str(status.get('last_run_id')) == os.environ['SOURCE_RUN_ID']
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('publish=' + str(publish).lower() + '\n')
+          PY
       - uses: actions/setup-python@v7
+        if: steps.fresh.outputs.publish == 'true'
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -v
+        if: steps.fresh.outputs.publish == 'true'
       - run: node --check dist/app.js
+        if: steps.fresh.outputs.publish == 'true'
       - run: python scripts/build.py
+        if: steps.fresh.outputs.publish == 'true'
       - name: Prepare public site
+        if: steps.fresh.outputs.publish == 'true'
         run: |
           mkdir public-site
           cp dist/index.html dist/app.js dist/style.css dist/data.js public-site/
           mkdir public-site/data
           cp dist/data/bundle.json public-site/data/
       - uses: actions/upload-pages-artifact@v5
+        if: steps.fresh.outputs.publish == 'true'
         with:
           path: public-site
       - name: Wait for uploaded artifact metadata
+        if: steps.fresh.outputs.publish == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -57,9 +78,11 @@ jobs:
           echo "::error::Uploaded Pages artifact did not become visible."
           exit 1
       - name: Deploy GitHub Pages
+        if: steps.fresh.outputs.publish == 'true'
         id: deployment
         uses: actions/deploy-pages@v5
       - name: Verify public site and database
+        if: steps.fresh.outputs.publish == 'true'
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
         run: python scripts/verify_public.py

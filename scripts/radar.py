@@ -185,7 +185,9 @@ def run(data_dir, client=None, at=None):
     jobs=load(d/'jobs.json');platforms=load(d/'platforms.json');projects=load(d/'projects.json');history=load(d/'check-history.json');cfg=load(d/'search-config.json');sources=load(d/'sources.json');status=load(d/'update-status.json')
     from adapters import bolt,workable,telus,public_page,jobsge,pharmbills,concentrix
     client=client or HttpClient({urlsplit(s['url']).hostname for s in sources if s.get('enabled')})
-    status.update(last_run_at=at,last_run_outcome='running');atomic(d/'update-status.json',status)
+    status.update(last_run_at=at,last_run_outcome='running',last_run_event=os.environ.get('GITHUB_EVENT_NAME','local'),last_run_id=os.environ.get('GITHUB_RUN_ID'));
+    if os.environ.get('GITHUB_EVENT_NAME')=='schedule':status['last_scheduled_attempt_at']=at
+    atomic(d/'update-status.json',status)
     reports=[];found=[];success=set();before=len(jobs);source_by_id={s['id']:s for s in sources}
     for src in sources:
         if not src.get('enabled'):continue
@@ -293,7 +295,11 @@ def run(data_dir, client=None, at=None):
     atomic(d/'source-history.json',source_history)
     # Successful save means persisted result, not verification of every record.
     for name,items in [('jobs.json',jobs),('platforms.json',platforms),('projects.json',projects),('check-history.json',history)]:atomic(d/name,items)
-    status['last_database_update']=now_iso();atomic(d/'update-status.json',status)
+    status['last_database_update']=now_iso()
+    if os.environ.get('GITHUB_EVENT_NAME')=='schedule' and status['last_run_outcome'] in ['success','partial']:
+        status['last_scheduled_completed_at']=status['last_database_update']
+        status['last_scheduled_run_id']=os.environ.get('GITHUB_RUN_ID')
+    atomic(d/'update-status.json',status)
     return status
 
 if __name__=='__main__':
