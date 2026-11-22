@@ -3,7 +3,7 @@ const fs=require('fs');
 const assert=require('node:assert/strict');
 (async()=>{
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||undefined});
-const page=await browser.newPage();
+const page=await browser.newPage({hasTouch:true});
 await page.route('**/*',r=>r.abort());
 const errors=[];page.on('pageerror',e=>errors.push(String(e)));
 const data=JSON.parse(fs.readFileSync(process.argv[2]||'dist/data/bundle.json','utf8'));
@@ -31,6 +31,20 @@ for(const width of [320,375,390,430,768,1024,1440]){
  assert(overflow.scroll<=width,`Overflow at ${width}: ${JSON.stringify(overflow)}`);
 }
 assert.equal(await page.locator('tbody .badge.new').count(),1);
+for(const width of [320,390,1440]){
+ await page.setViewportSize({width,height:900});
+ const trigger=width>=768?page.locator('tbody .detail-button').first():page.locator('.cards [data-detail]').first();
+ for(const side of ['left','right','top','bottom']){
+  await trigger.click();
+  assert(await page.locator('#detail').evaluate(e=>e.open));
+  await page.locator('#detailBody h2').click();
+  assert(await page.locator('#detail').evaluate(e=>e.open),'Inside click must not close');
+  const r=await page.locator('#detail').boundingBox();
+  const point={left:[r.x/2,r.y+r.height/2],right:[(r.x+r.width+width)/2,r.y+r.height/2],top:[width/2,r.y/2],bottom:[width/2,(r.y+r.height+900)/2]}[side];
+  if(width<768)await page.touchscreen.tap(...point);else await page.mouse.click(...point);
+  assert(!(await page.locator('#detail').evaluate(e=>e.open)),side+' backdrop did not close at '+width);
+ }
+}
 assert.deepEqual(errors,[]);
 console.log('PASS: freshness ranges, unknown/future dates, newest sorting, overview shortcut, reset and seven viewport widths');
 await browser.close();
