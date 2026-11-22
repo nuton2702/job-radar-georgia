@@ -3,3 +3,5 @@
 /* Freshness is independent of verification status. */
 .badge.new{background:#ffde9a;color:#743600;border:1px solid #c66b00;font-weight:750;box-shadow:0 0 0 1px #fff8 inset}.dark .badge.new{background:#ffbd59;color:#482000;border-color:#ffcf85}.new-stat{text-align:left;width:100%;cursor:pointer;font:inherit}.new-stat:hover{border-color:#c66b00}.new-stat:focus-visible{outline:3px solid #c66b00;outline-offset:3px}
 
+
+.filters select{width:100%;min-width:0}.rowmini>*{min-width:0;overflow-wrap:anywhere}
