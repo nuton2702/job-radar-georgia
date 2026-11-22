@@ -1,6 +1,6 @@
 {
-  "last_database_update": "2026-11-21T14:29:35+00:00",
-  "last_run_at": "2026-11-21T14:29:06+00:00",
+  "last_database_update": "2026-11-22T00:52:11+00:00",
+  "last_run_at": "2026-11-22T00:50:17+00:00",
   "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
@@ -13,7 +13,8 @@
       "returned": 9,
       "name": "Wolt",
       "scope": "Официальный список и JobPosting; только доступные на странице позиции",
-      "observation": null
+      "observation": null,
+      "discovery": null
     },
     {
       "source_id": "welo",
@@ -21,7 +22,8 @@
       "returned": 462,
       "name": "Welo Data",
       "scope": "Публичный API; talent pools отдельно от оплачиваемых работ",
-      "observation": null
+      "observation": null,
+      "discovery": null
     },
     {
       "source_id": "bolt",
@@ -29,7 +31,8 @@
       "returned": 186,
       "name": "Bolt",
       "scope": "Поиск и проверка конкретных вакансий; отсутствие в списке не закрывает запись",
-      "observation": null
+      "observation": null,
+      "discovery": null
     },
     {
       "source_id": "rws",
@@ -37,7 +40,8 @@
       "returned": 147,
       "name": "RWS TrainAI",
       "scope": "Публичный список Lever; базы кандидатов отдельно",
-      "observation": null
+      "observation": null,
+      "discovery": null
     },
     {
       "source_id": "supportyourapp",
@@ -45,7 +49,8 @@
       "returned": 51,
       "name": "SupportYourApp",
       "scope": "Публичный список Workable; отсутствие не подтверждает закрытие",
-      "observation": null
+      "observation": null,
+      "discovery": null
     },
     {
       "source_id": "telus",
@@ -72,7 +77,8 @@
         "content_hash": "2bdb241afac16a79",
         "url": "https://dataforcecommunity.transperfect.com/projects",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
-      }
+      },
+      "discovery": null
     },
     {
       "source_id": "modsquad",
@@ -92,7 +98,8 @@
         "content_hash": "059ceba8fcaf55a3",
         "url": "https://mindrift.ai/apply",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
-      }
+      },
+      "discovery": null
     },
     {
       "source_id": "oneforma",
@@ -105,7 +112,8 @@
         "content_hash": "b92f79dc308613b1",
         "url": "https://www.oneforma.com/projects/",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
-      }
+      },
+      "discovery": null
     },
     {
       "source_id": "crowdgen",
@@ -125,7 +133,8 @@
         "content_hash": "892c9cd3fd1a790e",
         "url": "https://outlier.ai",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
-      }
+      },
+      "discovery": null
     },
     {
       "source_id": "diaspire",
@@ -138,7 +147,8 @@
         "content_hash": "72711c626dfc9cc8",
         "url": "https://jobs.diaspire.app",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
-      }
+      },
+      "discovery": null
     },
     {
       "source_id": "stafka",
@@ -148,31 +158,40 @@
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "observation": {
         "page_title": "Remote Jobs with US & European Companies in Georgia | Stafka",
-        "content_hash": "9b052b12d137f078",
+        "content_hash": "6884c4aaeb6595b1",
         "url": "https://stafka.com/ge",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
-      }
+      },
+      "discovery": null
     },
     {
       "source_id": "jobsge",
       "status": "ok",
-      "returned": 1,
+      "returned": 40,
       "name": "Jobs.ge",
       "scope": "Текущий список + проверка объявления; до 40 релевантных страниц за запуск; отсутствие не закрывает вакансию",
-      "observation": null
+      "observation": null,
+      "discovery": {
+        "relevant_listings": 68,
+        "details_attempted": 40,
+        "daily_limit": 40,
+        "listing_pages": 17
+      }
     },
     {
       "source_id": "concentrix",
       "status": "ok",
-      "returned": 0,
+      "returned": 19,
       "name": "Concentrix",
-      "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
-      "observation": {
-        "page_title": "Work with Concentrix - Game Changing Customer Support Jobs",
-        "content_hash": "7e0dfb9b3bf013d8",
-        "url": "https://jobs.concentrix.com/",
-        "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
-      }
+      "scope": "Конкретные объявления в публичных данных списка для Грузии; отсутствие не подтверждает закрытие",
+      "observation": null,
+      "discovery": null
+    },
+    {
+      "source_id": "concentrix",
+      "status": "detail_error",
+      "url": "https://jobs.concentrix.com/job-search/?country=Georgia",
+      "error": "Incomplete posting R1762783"
     },
     {
       "source_id": "linkedin",
@@ -180,13 +199,31 @@
       "name": "LinkedIn",
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "error": "robots disallows retrieval"
+    },
+    {
+      "source_id": "colibrix",
+      "status": "ok",
+      "returned": 15,
+      "name": "COLIBRIX ONE",
+      "scope": "Официальный список Workable вместо LinkedIn",
+      "observation": null,
+      "discovery": null
+    },
+    {
+      "source_id": "pharmbills",
+      "status": "ok",
+      "returned": 3,
+      "name": "Pharmbills",
+      "scope": "Список для Грузии + конкретная карточка + ссылка отклика",
+      "observation": null,
+      "discovery": null
     }
   ],
-  "new_jobs": 2,
-  "checked_jobs": 21,
-  "verified_jobs": 7,
-  "total_jobs": 21,
-  "coverage_note": "Поиск: Wolt, Welo Data, Bolt, RWS TrainAI, SupportYourApp, TELUS Digital AI, Jobs.ge. Общие страницы платформ не подтверждают проекты. Ограничения и ошибки — в результатах источников.",
+  "new_jobs": 5,
+  "checked_jobs": 26,
+  "verified_jobs": 21,
+  "total_jobs": 26,
+  "coverage_note": "Поиск: Wolt, Welo Data, Bolt, RWS TrainAI, SupportYourApp, TELUS Digital AI, Jobs.ge, Concentrix, COLIBRIX ONE, Pharmbills. Общие страницы платформ не подтверждают проекты. Ограничения и ошибки — в результатах источников.",
   "schedule_configured": true,
   "scheduled_run_confirmed": true
 }
