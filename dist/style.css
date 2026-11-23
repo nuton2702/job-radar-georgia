@@ -9,3 +9,5 @@
 .jobheading{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap}.jobheading .jobtitle{flex:1;min-width:140px;overflow-wrap:anywhere}.detail-button{flex:none;font-size:12px;padding:6px 9px;min-height:36px;color:var(--accent)}
 
 .archive-switch{display:flex;justify-content:flex-end;margin-bottom:16px}.archive-switch button{color:var(--accent)}
+
+.radar-status .rowmini{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:12px}.radar-status .rowmini>*{overflow-wrap:break-word}@media(max-width:767px){.radar-status .rowmini{grid-template-columns:1fr;gap:5px}.radar-status .rowmini strong{text-align:left}}
