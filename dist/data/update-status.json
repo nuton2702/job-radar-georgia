@@ -1,6 +1,6 @@
 {
-  "last_database_update": "2026-11-23T06:02:35+00:00",
-  "last_run_at": "2026-11-23T06:00:43+00:00",
+  "last_database_update": "2026-11-23T18:07:55+00:00",
+  "last_run_at": "2026-11-23T18:06:19+00:00",
   "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
@@ -19,7 +19,7 @@
     {
       "source_id": "welo",
       "status": "ok",
-      "returned": 462,
+      "returned": 456,
       "name": "Welo Data",
       "scope": "Публичный API; talent pools отдельно от оплачиваемых работ",
       "observation": null,
@@ -28,7 +28,7 @@
     {
       "source_id": "bolt",
       "status": "ok",
-      "returned": 186,
+      "returned": 185,
       "name": "Bolt",
       "scope": "Поиск и проверка конкретных вакансий; отсутствие в списке не закрывает запись",
       "observation": null,
@@ -46,7 +46,7 @@
     {
       "source_id": "supportyourapp",
       "status": "ok",
-      "returned": 51,
+      "returned": 48,
       "name": "SupportYourApp",
       "scope": "Публичный список Workable; отсутствие не подтверждает закрытие",
       "observation": null,
@@ -172,10 +172,10 @@
       "scope": "Текущий список + проверка объявления; до 40 релевантных страниц за запуск; отсутствие не закрывает вакансию",
       "observation": null,
       "discovery": {
-        "relevant_listings": 64,
+        "relevant_listings": 62,
         "details_attempted": 40,
         "daily_limit": 40,
-        "listing_pages": 17
+        "listing_pages": 16
       }
     },
     {
@@ -203,7 +203,7 @@
     {
       "source_id": "colibrix",
       "status": "ok",
-      "returned": 15,
+      "returned": 12,
       "name": "COLIBRIX ONE",
       "scope": "Официальный список Workable вместо LinkedIn",
       "observation": null,
@@ -226,9 +226,9 @@
   "coverage_note": "Поиск: Wolt, Welo Data, Bolt, RWS TrainAI, SupportYourApp, TELUS Digital AI, Jobs.ge, Concentrix, COLIBRIX ONE, Pharmbills. Общие страницы платформ не подтверждают проекты. Ограничения и ошибки — в результатах источников.",
   "schedule_configured": true,
   "scheduled_run_confirmed": true,
-  "last_run_event": "workflow_dispatch",
-  "last_run_id": "45121286410",
-  "last_scheduled_attempt_at": "2026-11-22T23:36:49+00:00",
-  "last_scheduled_completed_at": "2026-11-22T23:38:22+00:00",
-  "last_scheduled_run_id": "45084174998"
+  "last_run_event": "schedule",
+  "last_run_id": "45234761124",
+  "last_scheduled_attempt_at": "2026-11-23T18:06:19+00:00",
+  "last_scheduled_completed_at": "2026-11-23T18:07:55+00:00",
+  "last_scheduled_run_id": "45234761124"
 }
