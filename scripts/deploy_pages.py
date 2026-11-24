@@ -49,7 +49,7 @@ for attempt in range(60):
     print("Pages deployment status:", status, flush=True)
     if status == "succeed":
         break
-    if status not in ("deployment_in_progress", "queued", "pending"):
+    if status in ("deployment_failed", "deployment_content_failed", "deployment_cancelled", "deployment_lost"):
         raise RuntimeError("Pages deployment failed: " + status)
     time.sleep(5)
 else:
