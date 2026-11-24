@@ -1,6 +1,6 @@
 {
-  "last_database_update": "2026-11-23T18:07:55+00:00",
-  "last_run_at": "2026-11-23T18:06:19+00:00",
+  "last_database_update": "2026-11-24T03:59:17+00:00",
+  "last_run_at": "2026-11-24T03:57:41+00:00",
   "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
@@ -10,7 +10,7 @@
     {
       "source_id": "wolt",
       "status": "ok",
-      "returned": 9,
+      "returned": 8,
       "name": "Wolt",
       "scope": "Официальный список и JobPosting; только доступные на странице позиции",
       "observation": null,
@@ -19,7 +19,7 @@
     {
       "source_id": "welo",
       "status": "ok",
-      "returned": 456,
+      "returned": 455,
       "name": "Welo Data",
       "scope": "Публичный API; talent pools отдельно от оплачиваемых работ",
       "observation": null,
@@ -144,7 +144,7 @@
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "observation": {
         "page_title": "Remote Jobs | Diaspire",
-        "content_hash": "72711c626dfc9cc8",
+        "content_hash": "123faf18186ea69f",
         "url": "https://jobs.diaspire.app",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
       },
@@ -158,7 +158,7 @@
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "observation": {
         "page_title": "Remote Jobs with US & European Companies in Georgia | Stafka",
-        "content_hash": "51d5ef2f1667bca5",
+        "content_hash": "af879957763835d9",
         "url": "https://stafka.com/ge",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
       },
@@ -221,14 +221,14 @@
   ],
   "new_jobs": 0,
   "checked_jobs": 26,
-  "verified_jobs": 20,
+  "verified_jobs": 19,
   "total_jobs": 26,
   "coverage_note": "Поиск: Wolt, Welo Data, Bolt, RWS TrainAI, SupportYourApp, TELUS Digital AI, Jobs.ge, Concentrix, COLIBRIX ONE, Pharmbills. Общие страницы платформ не подтверждают проекты. Ограничения и ошибки — в результатах источников.",
   "schedule_configured": true,
   "scheduled_run_confirmed": true,
   "last_run_event": "schedule",
-  "last_run_id": "45234761124",
-  "last_scheduled_attempt_at": "2026-11-23T18:06:19+00:00",
-  "last_scheduled_completed_at": "2026-11-23T18:07:55+00:00",
-  "last_scheduled_run_id": "45234761124"
+  "last_run_id": "45323034970",
+  "last_scheduled_attempt_at": "2026-11-24T03:57:41+00:00",
+  "last_scheduled_completed_at": "2026-11-24T03:59:17+00:00",
+  "last_scheduled_run_id": "45323034970"
 }
