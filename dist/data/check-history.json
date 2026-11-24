@@ -3778,5 +3778,299 @@
     "outcome": "public_page_accessible",
     "evidence": "Проверена только публичная страница; проекты и выплаты не подтверждены",
     "url": "https://stafka.com/ge"
+  },
+  {
+    "record_id": "job-36edd1e60102",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in official current list and matching JobPosting detail",
+    "url": "https://careers.wolt.com/en/jobs/4/7984874"
+  },
+  {
+    "record_id": "job-c32803957a39",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in official current list and matching JobPosting detail",
+    "url": "https://careers.wolt.com/en/jobs/4/7925981"
+  },
+  {
+    "record_id": "project-3b99b6d6d8094ebd",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "talent_pool",
+    "evidence": "Published official Lever posting; talent pool is not a paid project",
+    "url": "https://jobs.lever.co/weloglobal/a5a093a9-2153-4ec0-b8b0-3b9da42fc51d"
+  },
+  {
+    "record_id": "project-07eddb9b3af31199",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "talent_pool",
+    "evidence": "Published official Lever posting; talent pool is not a paid project",
+    "url": "https://jobs.lever.co/weloglobal/0bfce19a-f593-45af-ac16-bd1cbef93952"
+  },
+  {
+    "record_id": "job-8794d7cdc2c0",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID, role and location in official Bolt current list; format not inferred",
+    "url": "https://bolt.eu/en/careers/positions/40fb31d4-d082-4a8d-96c0-f05e570d184e/"
+  },
+  {
+    "record_id": "job-11756e1ac759",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID, role and location in official Bolt current list; format not inferred",
+    "url": "https://bolt.eu/en/careers/positions/0ebabc4e-e4de-42ce-8d1f-0c594f99b117/"
+  },
+  {
+    "record_id": "job-5de32b8f363c5aab",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific posting in official public Workable feed",
+    "url": "https://apply.workable.com/j/C763FC5D0A"
+  },
+  {
+    "record_id": "job-97516d9861f845fb",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific posting in official public Workable feed",
+    "url": "https://apply.workable.com/j/9CF2A9029B"
+  },
+  {
+    "record_id": "job-77d3a33a9cb12012",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in current Jobs.ge list and matching title/employer in detail; source date lacks year and is not inferred",
+    "url": "https://jobs.ge/en/?view=jobs&id=769382"
+  },
+  {
+    "record_id": "job-02e4719170ae",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in current Jobs.ge list and matching title/employer in detail; source date lacks year and is not inferred",
+    "url": "https://jobs.ge/en/?view=jobs&id=768110"
+  },
+  {
+    "record_id": "job-95875d2f3f81c582",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in current Jobs.ge list and matching title/employer in detail; source date lacks year and is not inferred",
+    "url": "https://jobs.ge/en/?view=jobs&id=767014"
+  },
+  {
+    "record_id": "job-3aee2bef674a",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in current Jobs.ge list and matching title/employer in detail; source date lacks year and is not inferred",
+    "url": "https://jobs.ge/en/?view=jobs&id=766787"
+  },
+  {
+    "record_id": "job-e1b5328e7a83",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in current Jobs.ge list and matching title/employer in detail; source date lacks year and is not inferred",
+    "url": "https://jobs.ge/en/?view=jobs&id=766749"
+  },
+  {
+    "record_id": "job-c32803957a39",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in current Jobs.ge list and matching title/employer in detail; source date lacks year and is not inferred",
+    "url": "https://jobs.ge/en/?view=jobs&id=765711"
+  },
+  {
+    "record_id": "job-ecb0946c9de3",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in current Jobs.ge list and matching title/employer in detail; source date lacks year and is not inferred",
+    "url": "https://jobs.ge/en/?view=jobs&id=765333"
+  },
+  {
+    "record_id": "job-3b78b937a9cc",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in current Jobs.ge list and matching title/employer in detail; source date lacks year and is not inferred",
+    "url": "https://jobs.ge/en/?view=jobs&id=765175"
+  },
+  {
+    "record_id": "job-0e23455ee165",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific ID in current Jobs.ge list and matching title/employer in detail; source date lacks year and is not inferred",
+    "url": "https://jobs.ge/en/?view=jobs&id=764254"
+  },
+  {
+    "record_id": "job-1623085e71bfbfc4",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "excluded",
+    "evidence": "Языковое требование не подходит: German. Become a German-speaking Customer Support Specialist",
+    "url": "https://jobs.concentrix.com/job/?id=GE-53"
+  },
+  {
+    "record_id": "job-58a8fb720654",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific posting in official public Workable feed",
+    "url": "https://apply.workable.com/j/80C546D3CC"
+  },
+  {
+    "record_id": "job-12d23c677102f572",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific posting in official public Workable feed",
+    "url": "https://apply.workable.com/j/1BE58C7765"
+  },
+  {
+    "record_id": "job-3a6e9e3e0369d25d",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific opening on official Georgia board, matching detail heading and application link",
+    "url": "https://cooperation.pharmbills.com/openings/data-entry-georgia-remote"
+  },
+  {
+    "record_id": "job-b93de9d2b257",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific opening on official Georgia board, matching detail heading and application link",
+    "url": "https://cooperation.pharmbills.com/openings/authorizations-representative-georgia-remote"
+  },
+  {
+    "record_id": "job-397897a202c0",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "verified",
+    "evidence": "Specific opening on official Georgia board, matching detail heading and application link",
+    "url": "https://cooperation.pharmbills.com/openings/healthcare-customer-support-georgia-remote"
+  },
+  {
+    "record_id": "job-45f95693ce67",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "unavailable",
+    "evidence": "Absent from list; direct page HTTP 200",
+    "url": "https://careers.wolt.com/en/jobs/4/8083233"
+  },
+  {
+    "record_id": "job-f2a8c555a3ce",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "missing",
+    "evidence": "Absent from list; direct page HTTP 404",
+    "url": "https://careers.wolt.com/en/jobs/4/8289319"
+  },
+  {
+    "record_id": "job-607b3376c5e2",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "unavailable",
+    "evidence": "robots disallows retrieval",
+    "url": "https://ge.linkedin.com/jobs/view/customer-service-specialist-at-alps2alps-ski-transfers-4488841432"
+  },
+  {
+    "record_id": "job-4a7e7b8f4ca7",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "unavailable",
+    "evidence": "No matching specific opening in connected sources; original record retained",
+    "url": "https://careers.wolt.com/en/jobs?location=Tbilisi%2C+Georgia"
+  },
+  {
+    "record_id": "job-ac70cf34c382",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "unavailable",
+    "evidence": "robots disallows retrieval",
+    "url": "https://ge.linkedin.com/jobs/view/qa-engineer-at-voki-games-4484960725"
+  },
+  {
+    "record_id": "job-d82837a79bd8",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "unavailable",
+    "evidence": "No matching specific opening in connected sources; original record retained",
+    "url": "https://jobs.concentrix.com/"
+  },
+  {
+    "record_id": "platform-169d997c2e",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "needs_review",
+    "evidence": "Источник недоступен для проверки",
+    "url": "https://www.utest.com"
+  },
+  {
+    "record_id": "platform-a5cdae8bf5",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "public_page_accessible",
+    "evidence": "Проверена только публичная страница; проекты и выплаты не подтверждены",
+    "url": "https://dataforcecommunity.transperfect.com/projects"
+  },
+  {
+    "record_id": "platform-e5d4686aa4",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "needs_review",
+    "evidence": "Источник недоступен для проверки",
+    "url": "https://join.modsquad.com/careers/"
+  },
+  {
+    "record_id": "platform-d82366f358",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "needs_review",
+    "evidence": "Источник недоступен для проверки",
+    "url": "https://jobs.telusdigital.com/search/cfm5/ai-community/jobs"
+  },
+  {
+    "record_id": "platform-1a0422d1dd",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "official_board_accessible",
+    "evidence": "Проверен публичный список; доступность конкретных проектов для вас не гарантирована",
+    "url": "https://api.lever.co/v0/postings/weloglobal?mode=json"
+  },
+  {
+    "record_id": "platform-08ff378c91",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "official_board_accessible",
+    "evidence": "Проверен публичный список; доступность конкретных проектов для вас не гарантирована",
+    "url": "https://api.lever.co/v0/postings/rws?mode=json"
+  },
+  {
+    "record_id": "platform-f3c8729c25",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "public_page_accessible",
+    "evidence": "Проверена только публичная страница; проекты и выплаты не подтверждены",
+    "url": "https://mindrift.ai/apply"
+  },
+  {
+    "record_id": "platform-cfd650bfda",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "public_page_accessible",
+    "evidence": "Проверена только публичная страница; проекты и выплаты не подтверждены",
+    "url": "https://www.oneforma.com/projects/"
+  },
+  {
+    "record_id": "platform-3fabc30a15",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "needs_review",
+    "evidence": "Источник недоступен для проверки",
+    "url": "https://crowdgen.com/experts/"
+  },
+  {
+    "record_id": "platform-ae6128d58e",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "public_page_accessible",
+    "evidence": "Проверена только публичная страница; проекты и выплаты не подтверждены",
+    "url": "https://outlier.ai"
+  },
+  {
+    "record_id": "platform-50a00d31bd",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "official_board_accessible",
+    "evidence": "Проверен публичный список; доступность конкретных проектов для вас не гарантирована",
+    "url": "https://apply.workable.com/api/v1/widget/accounts/supportyourapp?details=true"
+  },
+  {
+    "record_id": "platform-976dac6e9c",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "public_page_accessible",
+    "evidence": "Проверена только публичная страница; проекты и выплаты не подтверждены",
+    "url": "https://jobs.diaspire.app"
+  },
+  {
+    "record_id": "platform-193e339f6e",
+    "checked_at": "2026-11-24T07:53:15+00:00",
+    "outcome": "public_page_accessible",
+    "evidence": "Проверена только публичная страница; проекты и выплаты не подтверждены",
+    "url": "https://stafka.com/ge"
   }
 ]
