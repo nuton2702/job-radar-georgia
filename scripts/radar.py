@@ -173,7 +173,7 @@ def apply_result(record,outcome,at,evidence,url,history,min_hours=12):
         first=record.get('missing_since') or at
         count=record.get('missing_count',0)+1
         record.update(missing_since=first,missing_count=count)
-        record['status']='closed' if count>=2 and stamp(at)-stamp(first)>=timedelta(hours=min_hours) else 'needs_review'
+        record['status']=record['status'] if record.get('status') in ['closed','archived'] else 'closed' if count>=2 and stamp(at)-stamp(first)>=timedelta(hours=min_hours) else 'needs_review'
     elif outcome=='excluded':record['status']='archived'
     elif record.get('status') not in ['closed','archived']:record['status']='needs_review'
     event=dict(record_id=record['id'],checked_at=at,outcome=outcome,evidence=evidence,url=url)

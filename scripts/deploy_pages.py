@@ -33,24 +33,38 @@ for attempt in range(18):
             raise
         time.sleep(10)
 
-oidc = request(os.environ["ACTIONS_ID_TOKEN_REQUEST_URL"],
-               token=os.environ["ACTIONS_ID_TOKEN_REQUEST_TOKEN"])["value"]
-deployment = request(f"{API}/repos/{REPO}/pages/deployments", payload={
-    "artifact_id": artifact_id,
-    "pages_build_version": os.environ["GITHUB_SHA"],
-    "oidc_token": oidc,
-})
-deployment_id = deployment["id"]
-print(f"Created Pages deployment {deployment_id} for artifact {artifact_id}")
-with open(os.environ["GITHUB_OUTPUT"], "a") as output:
-    output.write("page_url=" + deployment["page_url"] + "\n")
-for attempt in range(60):
-    status = request(f"{API}/repos/{REPO}/pages/deployments/{deployment_id}")["status"]
-    print("Pages deployment status:", status, flush=True)
-    if status == "succeed":
+def deploy():
+    oidc = request(os.environ["ACTIONS_ID_TOKEN_REQUEST_URL"],
+                   token=os.environ["ACTIONS_ID_TOKEN_REQUEST_TOKEN"])["value"]
+    deployment = request(f"{API}/repos/{REPO}/pages/deployments", payload={
+        "artifact_id": artifact_id,
+        "pages_build_version": os.environ["GITHUB_SHA"],
+        "oidc_token": oidc,
+    })
+    deployment_id = deployment["id"]
+    print(f"Created Pages deployment {deployment_id} for artifact {artifact_id}")
+    with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+        output.write("page_url=" + deployment["page_url"] + "\n")
+    for attempt in range(60):
+        result = request(f"{API}/repos/{REPO}/pages/deployments/{deployment_id}")
+        status = result["status"]
+        if status == "deployment_failed":
+            print("Pages failure details:", json.dumps(result), flush=True)
+        print("Pages deployment status:", status, flush=True)
+        if status == "succeed":
+            break
+        if status in ("deployment_failed", "deployment_content_failed", "deployment_cancelled", "deployment_lost"):
+            raise RuntimeError("Pages deployment failed: " + status)
+        time.sleep(5)
+    else:
+        raise TimeoutError("Pages deployment did not complete within five minutes")
+    
+for deployment_attempt in range(3):
+    try:
+        deploy()
         break
-    if status in ("deployment_failed", "deployment_content_failed", "deployment_cancelled", "deployment_lost"):
-        raise RuntimeError("Pages deployment failed: " + status)
-    time.sleep(5)
-else:
-    raise TimeoutError("Pages deployment did not complete within five minutes")
+    except RuntimeError as exc:
+        if str(exc) != "Pages deployment failed: deployment_failed" or deployment_attempt == 2:
+            raise
+        print("Retrying failed Pages deployment in 15 seconds", flush=True)
+        time.sleep(15)
