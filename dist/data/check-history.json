@@ -4954,5 +4954,32 @@
     "outcome": "public_page_accessible",
     "evidence": "Проверена только публичная страница; проекты и выплаты не подтверждены",
     "url": "https://stafka.com/ge"
+  },
+  {
+    "record_id": "job-607b3376c5e2",
+    "checked_at": "2026-11-24T08:24:31+00:00",
+    "outcome": "closed",
+    "method": "manual",
+    "reviewer": "user",
+    "evidence": "Пользователь вручную проверила LinkedIn 24.11.2026: заявки больше не принимаются. Закрыто именно исходное LinkedIn-объявление. На официальном портале есть похожая позиция; автоматическое переоткрытие не подтверждено.",
+    "url": "https://ge.linkedin.com/jobs/view/customer-service-specialist-at-alps2alps-ski-transfers-4488841432"
+  },
+  {
+    "record_id": "job-ac70cf34c382",
+    "checked_at": "2026-11-24T08:24:31+00:00",
+    "outcome": "closed",
+    "method": "manual",
+    "reviewer": "user",
+    "evidence": "Пользователь вручную проверила LinkedIn 24.11.2026: заявки больше не принимаются. На официальном сайте VOKI Games в текущем списке QA Engineer не найдена.",
+    "url": "https://ge.linkedin.com/jobs/view/qa-engineer-at-voki-games-4484960725"
+  },
+  {
+    "record_id": "job-d82837a79bd8",
+    "checked_at": "2026-11-24T08:24:31+00:00",
+    "outcome": "closed",
+    "method": "manual",
+    "reviewer": "assistant",
+    "evidence": "Ручная проверка 24.11.2026: просмотрен полный официальный список Concentrix для Georgia (20 записей, клиентская пагинация по 10). Искомой русскоязычной игровой поддержки нет. Дополнительные запросы Russian и games также не нашли её. Закрыто по указанию пользователя при отсутствии в официальном каталоге; это не прямое сообщение работодателя о закрытии.",
+    "url": "https://jobs.concentrix.com/"
   }
 ]

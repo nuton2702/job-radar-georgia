@@ -182,5 +182,25 @@
       "healthcare-customer-support-georgia-remote"
     ],
     "scope": "Список для Грузии + конкретная карточка + ссылка отклика"
+  },
+  {
+    "id": "alps2alps",
+    "company": "Alps2Alps Ski Transfers",
+    "url": "https://amitours.peopleforce.io/careers",
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Список наблюдения работодателей. Проверка доступности карьерной страницы при каждом запуске; автоматическое извлечение новых вакансий пока не подключено. На 24.11.2026 robots.txt запрещает чтение; необходим ручной просмотр.",
+    "monitoring_status": "manual_review_required",
+    "monitoring_requested_on": "2026-11-24"
+  },
+  {
+    "id": "voki",
+    "company": "VOKI Games",
+    "url": "https://vokigames.com/vacancies/",
+    "adapter": "public_page",
+    "enabled": true,
+    "scope": "Список наблюдения работодателей. Проверка доступности карьерной страницы при каждом запуске; автоматическое извлечение новых вакансий пока не подключено. На 24.11.2026 robots.txt запрещает чтение; необходим ручной просмотр.",
+    "monitoring_status": "manual_review_required",
+    "monitoring_requested_on": "2026-11-24"
   }
 ]
