@@ -1,6 +1,6 @@
 {
-  "last_database_update": "2026-11-24T07:54:53+00:00",
-  "last_run_at": "2026-11-24T07:53:15+00:00",
+  "last_database_update": "2026-11-24T08:05:31+00:00",
+  "last_run_at": "2026-11-24T08:03:46+00:00",
   "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
@@ -227,7 +227,7 @@
   "schedule_configured": true,
   "scheduled_run_confirmed": true,
   "last_run_event": "push",
-  "last_run_id": "45351451850",
+  "last_run_id": "45352852674",
   "last_scheduled_attempt_at": "2026-11-24T03:57:41+00:00",
   "last_scheduled_completed_at": "2026-11-24T03:59:17+00:00",
   "last_scheduled_run_id": "45323034970"
