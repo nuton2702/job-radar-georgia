@@ -2769,5 +2769,221 @@
         "discovery": null
       }
     ]
+  },
+  {
+    "run_at": "2026-11-24T08:08:08+00:00",
+    "results": [
+      {
+        "source_id": "wolt",
+        "status": "ok",
+        "returned": 8,
+        "name": "Wolt",
+        "scope": "Официальный список и JobPosting; только доступные на странице позиции",
+        "observation": null,
+        "discovery": null
+      },
+      {
+        "source_id": "welo",
+        "status": "ok",
+        "returned": 452,
+        "name": "Welo Data",
+        "scope": "Публичный API; talent pools отдельно от оплачиваемых работ",
+        "observation": null,
+        "discovery": null
+      },
+      {
+        "source_id": "bolt",
+        "status": "ok",
+        "returned": 184,
+        "name": "Bolt",
+        "scope": "Поиск и проверка конкретных вакансий; отсутствие в списке не закрывает запись",
+        "observation": null,
+        "discovery": null
+      },
+      {
+        "source_id": "rws",
+        "status": "ok",
+        "returned": 147,
+        "name": "RWS TrainAI",
+        "scope": "Публичный список Lever; базы кандидатов отдельно",
+        "observation": null,
+        "discovery": null
+      },
+      {
+        "source_id": "supportyourapp",
+        "status": "ok",
+        "returned": 49,
+        "name": "SupportYourApp",
+        "scope": "Публичный список Workable; отсутствие не подтверждает закрытие",
+        "observation": null,
+        "discovery": null
+      },
+      {
+        "source_id": "telus",
+        "status": "error",
+        "name": "TELUS Digital AI",
+        "scope": "Публичный список AI Community, с проверкой страниц пагинации",
+        "error": "robots unavailable: HTTP 403"
+      },
+      {
+        "source_id": "utest",
+        "status": "error",
+        "name": "uTest",
+        "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
+        "error": "robots disallows retrieval"
+      },
+      {
+        "source_id": "dataforce",
+        "status": "ok",
+        "returned": 0,
+        "name": "DataForce",
+        "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
+        "observation": {
+          "page_title": "Projects | DataForce Community",
+          "content_hash": "55874132e7ac779a",
+          "url": "https://dataforcecommunity.transperfect.com/projects",
+          "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+        },
+        "discovery": null
+      },
+      {
+        "source_id": "modsquad",
+        "status": "error",
+        "name": "ModSquad",
+        "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
+        "error": "No readable public content; projects not verified"
+      },
+      {
+        "source_id": "mindrift",
+        "status": "ok",
+        "returned": 0,
+        "name": "Mindrift",
+        "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
+        "observation": {
+          "page_title": "Earn Money Training AI — Remote Projects for Experts | Mindrift AI Training Jobs Remote Work",
+          "content_hash": "059ceba8fcaf55a3",
+          "url": "https://mindrift.ai/apply",
+          "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+        },
+        "discovery": null
+      },
+      {
+        "source_id": "oneforma",
+        "status": "ok",
+        "returned": 0,
+        "name": "OneForma",
+        "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
+        "observation": {
+          "page_title": "Open Freelance Projects | OneForma",
+          "content_hash": "b92f79dc308613b1",
+          "url": "https://www.oneforma.com/projects/",
+          "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+        },
+        "discovery": null
+      },
+      {
+        "source_id": "crowdgen",
+        "status": "error",
+        "name": "CrowdGen",
+        "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
+        "error": "HTTP 404; public page not checked"
+      },
+      {
+        "source_id": "outlier",
+        "status": "ok",
+        "returned": 0,
+        "name": "Outlier",
+        "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
+        "observation": {
+          "page_title": "Train the Next Generation of AI as an Expert| Outlier AI",
+          "content_hash": "892c9cd3fd1a790e",
+          "url": "https://outlier.ai",
+          "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+        },
+        "discovery": null
+      },
+      {
+        "source_id": "diaspire",
+        "status": "ok",
+        "returned": 0,
+        "name": "Diaspire",
+        "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
+        "observation": {
+          "page_title": "Remote Jobs | Diaspire",
+          "content_hash": "123faf18186ea69f",
+          "url": "https://jobs.diaspire.app",
+          "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+        },
+        "discovery": null
+      },
+      {
+        "source_id": "stafka",
+        "status": "ok",
+        "returned": 0,
+        "name": "Stafka",
+        "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
+        "observation": {
+          "page_title": "Remote Jobs with US & European Companies in Georgia | Stafka",
+          "content_hash": "62895780371633dc",
+          "url": "https://stafka.com/ge",
+          "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
+        },
+        "discovery": null
+      },
+      {
+        "source_id": "jobsge",
+        "status": "ok",
+        "returned": 40,
+        "name": "Jobs.ge",
+        "scope": "Текущий список + проверка объявления; до 40 релевантных страниц за запуск; отсутствие не закрывает вакансию",
+        "observation": null,
+        "discovery": {
+          "relevant_listings": 64,
+          "details_attempted": 40,
+          "daily_limit": 40,
+          "listing_pages": 16
+        }
+      },
+      {
+        "source_id": "concentrix",
+        "status": "ok",
+        "returned": 19,
+        "name": "Concentrix",
+        "scope": "Конкретные объявления в публичных данных списка для Грузии; отсутствие не подтверждает закрытие",
+        "observation": null,
+        "discovery": null
+      },
+      {
+        "source_id": "concentrix",
+        "status": "detail_error",
+        "url": "https://jobs.concentrix.com/job-search/?country=Georgia",
+        "error": "Incomplete posting R1762783"
+      },
+      {
+        "source_id": "linkedin",
+        "status": "error",
+        "name": "LinkedIn",
+        "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
+        "error": "robots disallows retrieval"
+      },
+      {
+        "source_id": "colibrix",
+        "status": "ok",
+        "returned": 12,
+        "name": "COLIBRIX ONE",
+        "scope": "Официальный список Workable вместо LinkedIn",
+        "observation": null,
+        "discovery": null
+      },
+      {
+        "source_id": "pharmbills",
+        "status": "ok",
+        "returned": 3,
+        "name": "Pharmbills",
+        "scope": "Список для Грузии + конкретная карточка + ссылка отклика",
+        "observation": null,
+        "discovery": null
+      }
+    ]
   }
 ]
