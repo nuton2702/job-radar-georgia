@@ -1,6 +1,6 @@
 {
-  "last_database_update": "2026-11-24T08:09:41+00:00",
-  "last_run_at": "2026-11-24T08:08:08+00:00",
+  "last_database_update": "2026-11-24T08:12:42+00:00",
+  "last_run_at": "2026-11-24T08:11:07+00:00",
   "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
@@ -172,7 +172,7 @@
       "scope": "Текущий список + проверка объявления; до 40 релевантных страниц за запуск; отсутствие не закрывает вакансию",
       "observation": null,
       "discovery": {
-        "relevant_listings": 64,
+        "relevant_listings": 63,
         "details_attempted": 40,
         "daily_limit": 40,
         "listing_pages": 16
@@ -227,7 +227,7 @@
   "schedule_configured": true,
   "scheduled_run_confirmed": true,
   "last_run_event": "push",
-  "last_run_id": "45353469200",
+  "last_run_id": "45353894404",
   "last_scheduled_attempt_at": "2026-11-24T03:57:41+00:00",
   "last_scheduled_completed_at": "2026-11-24T03:59:17+00:00",
   "last_scheduled_run_id": "45323034970"
