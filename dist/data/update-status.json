@@ -1,6 +1,6 @@
 {
-  "last_database_update": "2026-11-24T17:45:21+00:00",
-  "last_run_at": "2026-11-24T17:43:41+00:00",
+  "last_database_update": "2026-11-25T02:29:11+00:00",
+  "last_run_at": "2026-11-25T02:27:31+00:00",
   "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
@@ -19,7 +19,7 @@
     {
       "source_id": "welo",
       "status": "ok",
-      "returned": 454,
+      "returned": 455,
       "name": "Welo Data",
       "scope": "Публичный API; talent pools отдельно от оплачиваемых работ",
       "observation": null,
@@ -37,7 +37,7 @@
     {
       "source_id": "rws",
       "status": "ok",
-      "returned": 147,
+      "returned": 148,
       "name": "RWS TrainAI",
       "scope": "Публичный список Lever; базы кандидатов отдельно",
       "observation": null,
@@ -45,12 +45,10 @@
     },
     {
       "source_id": "supportyourapp",
-      "status": "ok",
-      "returned": 47,
+      "status": "error",
       "name": "SupportYourApp",
       "scope": "Публичный список Workable; отсутствие не подтверждает закрытие",
-      "observation": null,
-      "discovery": null
+      "error": "HTTP 429"
     },
     {
       "source_id": "telus",
@@ -109,7 +107,7 @@
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "observation": {
         "page_title": "Open Freelance Projects | OneForma",
-        "content_hash": "746bae6d59ea63a8",
+        "content_hash": "fc98d55a9434e1f8",
         "url": "https://www.oneforma.com/projects/",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
       },
@@ -158,7 +156,7 @@
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "observation": {
         "page_title": "Remote Jobs with US & European Companies in Georgia | Stafka",
-        "content_hash": "62895780371633dc",
+        "content_hash": "d147c084678acb12",
         "url": "https://stafka.com/ge",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
       },
@@ -233,16 +231,16 @@
       "error": "robots disallows retrieval"
     }
   ],
-  "new_jobs": 1,
+  "new_jobs": 0,
   "checked_jobs": 27,
-  "verified_jobs": 19,
+  "verified_jobs": 17,
   "total_jobs": 27,
   "coverage_note": "Поиск: Wolt, Welo Data, Bolt, RWS TrainAI, SupportYourApp, TELUS Digital AI, Jobs.ge, Concentrix, COLIBRIX ONE, Pharmbills. Общие страницы платформ не подтверждают проекты. Ограничения и ошибки — в результатах источников.",
   "schedule_configured": true,
   "scheduled_run_confirmed": true,
   "last_run_event": "schedule",
-  "last_run_id": "45451697125",
-  "last_scheduled_attempt_at": "2026-11-24T17:43:41+00:00",
-  "last_scheduled_completed_at": "2026-11-24T17:45:21+00:00",
-  "last_scheduled_run_id": "45451697125"
+  "last_run_id": "45533055977",
+  "last_scheduled_attempt_at": "2026-11-25T02:27:31+00:00",
+  "last_scheduled_completed_at": "2026-11-25T02:29:11+00:00",
+  "last_scheduled_run_id": "45533055977"
 }
