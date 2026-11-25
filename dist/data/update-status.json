@@ -1,6 +1,6 @@
 {
-  "last_database_update": "2026-11-25T06:02:26+00:00",
-  "last_run_at": "2026-11-25T06:00:48+00:00",
+  "last_database_update": "2026-11-25T17:14:21+00:00",
+  "last_run_at": "2026-11-25T17:12:26+00:00",
   "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
@@ -19,7 +19,7 @@
     {
       "source_id": "welo",
       "status": "ok",
-      "returned": 456,
+      "returned": 457,
       "name": "Welo Data",
       "scope": "Публичный API; talent pools отдельно от оплачиваемых работ",
       "observation": null,
@@ -46,7 +46,7 @@
     {
       "source_id": "supportyourapp",
       "status": "ok",
-      "returned": 58,
+      "returned": 57,
       "name": "SupportYourApp",
       "scope": "Публичный список Workable; отсутствие не подтверждает закрытие",
       "observation": null,
@@ -109,7 +109,7 @@
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "observation": {
         "page_title": "Open Freelance Projects | OneForma",
-        "content_hash": "281806eb09aeb019",
+        "content_hash": "33d8ab6c456fbec5",
         "url": "https://www.oneforma.com/projects/",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
       },
@@ -172,10 +172,10 @@
       "scope": "Текущий список + проверка объявления; до 40 релевантных страниц за запуск; отсутствие не закрывает вакансию",
       "observation": null,
       "discovery": {
-        "relevant_listings": 63,
+        "relevant_listings": 65,
         "details_attempted": 40,
         "daily_limit": 40,
-        "listing_pages": 16
+        "listing_pages": 17
       }
     },
     {
@@ -203,7 +203,7 @@
     {
       "source_id": "colibrix",
       "status": "ok",
-      "returned": 12,
+      "returned": 15,
       "name": "COLIBRIX ONE",
       "scope": "Официальный список Workable вместо LinkedIn",
       "observation": null,
@@ -240,9 +240,9 @@
   "coverage_note": "Поиск: Wolt, Welo Data, Bolt, RWS TrainAI, SupportYourApp, TELUS Digital AI, Jobs.ge, Concentrix, COLIBRIX ONE, Pharmbills. Общие страницы платформ не подтверждают проекты. Ограничения и ошибки — в результатах источников.",
   "schedule_configured": true,
   "scheduled_run_confirmed": true,
-  "last_run_event": "workflow_dispatch",
-  "last_run_id": "45557460367",
-  "last_scheduled_attempt_at": "2026-11-25T02:27:31+00:00",
-  "last_scheduled_completed_at": "2026-11-25T02:29:11+00:00",
-  "last_scheduled_run_id": "45533055977"
+  "last_run_event": "schedule",
+  "last_run_id": "45662250025",
+  "last_scheduled_attempt_at": "2026-11-25T17:12:26+00:00",
+  "last_scheduled_completed_at": "2026-11-25T17:14:21+00:00",
+  "last_scheduled_run_id": "45662250025"
 }
