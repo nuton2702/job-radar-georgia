@@ -1,6 +1,6 @@
 {
-  "last_database_update": "2026-11-27T06:02:44+00:00",
-  "last_run_at": "2026-11-27T06:00:43+00:00",
+  "last_database_update": "2026-11-27T16:40:33+00:00",
+  "last_run_at": "2026-11-27T16:38:40+00:00",
   "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
@@ -19,7 +19,7 @@
     {
       "source_id": "welo",
       "status": "ok",
-      "returned": 477,
+      "returned": 478,
       "name": "Welo Data",
       "scope": "Публичный API; talent pools отдельно от оплачиваемых работ",
       "observation": null,
@@ -28,7 +28,7 @@
     {
       "source_id": "bolt",
       "status": "ok",
-      "returned": 195,
+      "returned": 188,
       "name": "Bolt",
       "scope": "Поиск и проверка конкретных вакансий; отсутствие в списке не закрывает запись",
       "observation": null,
@@ -37,7 +37,7 @@
     {
       "source_id": "rws",
       "status": "ok",
-      "returned": 143,
+      "returned": 144,
       "name": "RWS TrainAI",
       "scope": "Публичный список Lever; базы кандидатов отдельно",
       "observation": null,
@@ -46,7 +46,7 @@
     {
       "source_id": "supportyourapp",
       "status": "ok",
-      "returned": 68,
+      "returned": 71,
       "name": "SupportYourApp",
       "scope": "Публичный список Workable; отсутствие не подтверждает закрытие",
       "observation": null,
@@ -74,7 +74,7 @@
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "observation": {
         "page_title": "Projects | DataForce Community",
-        "content_hash": "3282cef46ab67ed9",
+        "content_hash": "feebfa244f2bb2f4",
         "url": "https://dataforcecommunity.transperfect.com/projects",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
       },
@@ -95,7 +95,7 @@
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "observation": {
         "page_title": "Earn Money Training AI — Remote Projects for Experts | Mindrift AI Training Jobs Remote Work",
-        "content_hash": "059ceba8fcaf55a3",
+        "content_hash": "b250d7419c032e65",
         "url": "https://mindrift.ai/apply",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
       },
@@ -109,7 +109,7 @@
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "observation": {
         "page_title": "Open Freelance Projects | OneForma",
-        "content_hash": "33d8ab6c456fbec5",
+        "content_hash": "f659974bb394d20b",
         "url": "https://www.oneforma.com/projects/",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
       },
@@ -172,7 +172,7 @@
       "scope": "Текущий список + проверка объявления; до 40 релевантных страниц за запуск; отсутствие не закрывает вакансию",
       "observation": null,
       "discovery": {
-        "relevant_listings": 67,
+        "relevant_listings": 69,
         "details_attempted": 40,
         "daily_limit": 40,
         "listing_pages": 17
@@ -235,14 +235,14 @@
   ],
   "new_jobs": 0,
   "checked_jobs": 28,
-  "verified_jobs": 20,
+  "verified_jobs": 19,
   "total_jobs": 28,
   "coverage_note": "Поиск: Wolt, Welo Data, Bolt, RWS TrainAI, SupportYourApp, TELUS Digital AI, Jobs.ge, Concentrix, COLIBRIX ONE, Pharmbills. Общие страницы платформ не подтверждают проекты. Ограничения и ошибки — в результатах источников.",
   "schedule_configured": true,
   "scheduled_run_confirmed": true,
-  "last_run_event": "workflow_dispatch",
-  "last_run_id": "45949144336",
-  "last_scheduled_attempt_at": "2026-11-27T01:00:22+00:00",
-  "last_scheduled_completed_at": "2026-11-27T01:02:18+00:00",
-  "last_scheduled_run_id": "45920019366"
+  "last_run_event": "schedule",
+  "last_run_id": "46035328198",
+  "last_scheduled_attempt_at": "2026-11-27T16:38:40+00:00",
+  "last_scheduled_completed_at": "2026-11-27T16:40:33+00:00",
+  "last_scheduled_run_id": "46035328198"
 }
