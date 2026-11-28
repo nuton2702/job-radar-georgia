@@ -1,6 +1,6 @@
 {
-  "last_database_update": "2026-11-27T16:40:33+00:00",
-  "last_run_at": "2026-11-27T16:38:40+00:00",
+  "last_database_update": "2026-11-28T00:16:54+00:00",
+  "last_run_at": "2026-11-28T00:14:51+00:00",
   "automation_enabled": true,
   "source_manual_updated_on": "2026-11-21",
   "imported_jobs": 19,
@@ -19,7 +19,7 @@
     {
       "source_id": "welo",
       "status": "ok",
-      "returned": 478,
+      "returned": 477,
       "name": "Welo Data",
       "scope": "Публичный API; talent pools отдельно от оплачиваемых работ",
       "observation": null,
@@ -28,7 +28,7 @@
     {
       "source_id": "bolt",
       "status": "ok",
-      "returned": 188,
+      "returned": 187,
       "name": "Bolt",
       "scope": "Поиск и проверка конкретных вакансий; отсутствие в списке не закрывает запись",
       "observation": null,
@@ -46,7 +46,7 @@
     {
       "source_id": "supportyourapp",
       "status": "ok",
-      "returned": 71,
+      "returned": 72,
       "name": "SupportYourApp",
       "scope": "Публичный список Workable; отсутствие не подтверждает закрытие",
       "observation": null,
@@ -158,7 +158,7 @@
       "scope": "Только доступность публичной страницы. Поиск и проверка отдельных предложений НЕ подключены.",
       "observation": {
         "page_title": "Remote Jobs with US & European Companies in Georgia | Stafka",
-        "content_hash": "cd9b42c7cdb1d2a0",
+        "content_hash": "458ec9bd18cdbaf9",
         "url": "https://stafka.com/ge",
         "evidence": "Public page only; projects, country eligibility, rates and payouts NOT verified"
       },
@@ -172,10 +172,10 @@
       "scope": "Текущий список + проверка объявления; до 40 релевантных страниц за запуск; отсутствие не закрывает вакансию",
       "observation": null,
       "discovery": {
-        "relevant_listings": 69,
+        "relevant_listings": 70,
         "details_attempted": 40,
         "daily_limit": 40,
-        "listing_pages": 17
+        "listing_pages": 18
       }
     },
     {
@@ -212,7 +212,7 @@
     {
       "source_id": "pharmbills",
       "status": "ok",
-      "returned": 2,
+      "returned": 3,
       "name": "Pharmbills",
       "scope": "Список для Грузии + конкретная карточка + ссылка отклика",
       "observation": null,
@@ -233,16 +233,16 @@
       "error": "robots disallows retrieval"
     }
   ],
-  "new_jobs": 0,
-  "checked_jobs": 28,
-  "verified_jobs": 19,
-  "total_jobs": 28,
+  "new_jobs": 1,
+  "checked_jobs": 29,
+  "verified_jobs": 20,
+  "total_jobs": 29,
   "coverage_note": "Поиск: Wolt, Welo Data, Bolt, RWS TrainAI, SupportYourApp, TELUS Digital AI, Jobs.ge, Concentrix, COLIBRIX ONE, Pharmbills. Общие страницы платформ не подтверждают проекты. Ограничения и ошибки — в результатах источников.",
   "schedule_configured": true,
   "scheduled_run_confirmed": true,
   "last_run_event": "schedule",
-  "last_run_id": "46035328198",
-  "last_scheduled_attempt_at": "2026-11-27T16:38:40+00:00",
-  "last_scheduled_completed_at": "2026-11-27T16:40:33+00:00",
-  "last_scheduled_run_id": "46035328198"
+  "last_run_id": "46086842346",
+  "last_scheduled_attempt_at": "2026-11-28T00:14:51+00:00",
+  "last_scheduled_completed_at": "2026-11-28T00:16:54+00:00",
+  "last_scheduled_run_id": "46086842346"
 }
